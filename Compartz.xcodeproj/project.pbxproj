@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB8E7C0BF2442EDE0051452D /* Pods_Compartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79480EDDB200A98D319020C /* Pods_Compartz.framework */; };
+		F824B5A62B930DC9005FADB3 /* API+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B5A52B930DC9005FADB3 /* API+Extensions.swift */; };
+		F824B5A82B930DD7005FADB3 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B5A72B930DD7005FADB3 /* API.swift */; };
+		F824B5AB2B930E35005FADB3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B5AA2B930E35005FADB3 /* NetworkManager.swift */; };
+		F824B5AE2B931C89005FADB3 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B5AD2B931C89005FADB3 /* MainTabView.swift */; };
+		F824B5B02B931CFE005FADB3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B5AF2B931CFE005FADB3 /* HomeView.swift */; };
+		F824B5B22B931D06005FADB3 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B5B12B931D06005FADB3 /* CategoryView.swift */; };
+		F824B5B42B931D11005FADB3 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B5B32B931D11005FADB3 /* MyPageView.swift */; };
+		F824B5BA2B931E55005FADB3 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B5B92B931E55005FADB3 /* Banner.swift */; };
+		F824B5BD2B931F47005FADB3 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B5BC2B931F47005FADB3 /* Product.swift */; };
+		F824B5BF2B931F60005FADB3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B5BE2B931F60005FADB3 /* Category.swift */; };
+		F824B5C12B931F71005FADB3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B5C02B931F71005FADB3 /* User.swift */; };
+		F824B5C32B931F80005FADB3 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B5C22B931F80005FADB3 /* Order.swift */; };
+		F824B5C52B931F96005FADB3 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B5C42B931F96005FADB3 /* CartItem.swift */; };
 		F8FFF4202B923A75001B375B /* CompartzApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FFF41F2B923A75001B375B /* CompartzApp.swift */; };
 		F8FFF4222B923A75001B375B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FFF4212B923A75001B375B /* ContentView.swift */; };
 		F8FFF4242B923A76001B375B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FFF4232B923A76001B375B /* Assets.xcassets */; };
@@ -14,6 +28,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		248AD6660550D36491899602 /* Pods-Compartz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Compartz.debug.xcconfig"; path = "Target Support Files/Pods-Compartz/Pods-Compartz.debug.xcconfig"; sourceTree = "<group>"; };
+		84F3945D72CDB868B13E2566 /* Pods-Compartz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Compartz.release.xcconfig"; path = "Target Support Files/Pods-Compartz/Pods-Compartz.release.xcconfig"; sourceTree = "<group>"; };
+		A79480EDDB200A98D319020C /* Pods_Compartz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Compartz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F824B5A52B930DC9005FADB3 /* API+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Extensions.swift"; sourceTree = "<group>"; };
+		F824B5A72B930DD7005FADB3 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		F824B5A92B930DEE005FADB3 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		F824B5AA2B930E35005FADB3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F824B5AC2B930EFC005FADB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F824B5AD2B931C89005FADB3 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		F824B5AF2B931CFE005FADB3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F824B5B12B931D06005FADB3 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		F824B5B32B931D11005FADB3 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		F824B5B92B931E55005FADB3 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		F824B5BC2B931F47005FADB3 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		F824B5BE2B931F60005FADB3 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		F824B5C02B931F71005FADB3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F824B5C22B931F80005FADB3 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		F824B5C42B931F96005FADB3 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		F8FFF41C2B923A74001B375B /* Compartz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Compartz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8FFF41F2B923A75001B375B /* CompartzApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompartzApp.swift; sourceTree = "<group>"; };
 		F8FFF4212B923A75001B375B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,17 +58,109 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB8E7C0BF2442EDE0051452D /* Pods_Compartz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6CF74AB2FB34ADB716558A54 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A79480EDDB200A98D319020C /* Pods_Compartz.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C9678A4CD7CE7870FC7CC32 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				248AD6660550D36491899602 /* Pods-Compartz.debug.xcconfig */,
+				84F3945D72CDB868B13E2566 /* Pods-Compartz.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F824B5A02B930D53005FADB3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F824B5B92B931E55005FADB3 /* Banner.swift */,
+				F824B5BC2B931F47005FADB3 /* Product.swift */,
+				F824B5BE2B931F60005FADB3 /* Category.swift */,
+				F824B5C02B931F71005FADB3 /* User.swift */,
+				F824B5C22B931F80005FADB3 /* Order.swift */,
+				F824B5C42B931F96005FADB3 /* CartItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F824B5A12B930D5D005FADB3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F824B5A22B930D64005FADB3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F824B5B82B931DFE005FADB3 /* Home */,
+				F824B5B72B931DF7005FADB3 /* Category */,
+				F824B5B62B931DF0005FADB3 /* MyPage */,
+				F824B5AD2B931C89005FADB3 /* MainTabView.swift */,
+				F824B5AF2B931CFE005FADB3 /* HomeView.swift */,
+				F824B5B12B931D06005FADB3 /* CategoryView.swift */,
+				F824B5B32B931D11005FADB3 /* MyPageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F824B5A32B930D7A005FADB3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F824B5A72B930DD7005FADB3 /* API.swift */,
+				F824B5A52B930DC9005FADB3 /* API+Extensions.swift */,
+				F824B5AA2B930E35005FADB3 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F824B5A42B930D82005FADB3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F824B5B62B931DF0005FADB3 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		F824B5B72B931DF7005FADB3 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		F824B5B82B931DFE005FADB3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		F8FFF4132B923A74001B375B = {
 			isa = PBXGroup;
 			children = (
 				F8FFF41E2B923A74001B375B /* Compartz */,
 				F8FFF41D2B923A74001B375B /* Products */,
+				9C9678A4CD7CE7870FC7CC32 /* Pods */,
+				6CF74AB2FB34ADB716558A54 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,10 +175,17 @@
 		F8FFF41E2B923A74001B375B /* Compartz */ = {
 			isa = PBXGroup;
 			children = (
+				F824B5AC2B930EFC005FADB3 /* Info.plist */,
+				F824B5A22B930D64005FADB3 /* Views */,
+				F824B5A12B930D5D005FADB3 /* ViewModels */,
+				F824B5A02B930D53005FADB3 /* Models */,
+				F824B5A32B930D7A005FADB3 /* Network */,
+				F824B5A42B930D82005FADB3 /* Utils */,
 				F8FFF41F2B923A75001B375B /* CompartzApp.swift */,
 				F8FFF4212B923A75001B375B /* ContentView.swift */,
 				F8FFF4232B923A76001B375B /* Assets.xcassets */,
 				F8FFF4252B923A76001B375B /* Preview Content */,
+				F824B5A92B930DEE005FADB3 /* Secrets.xcconfig */,
 			);
 			path = Compartz;
 			sourceTree = "<group>";
@@ -74,9 +205,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8FFF42A2B923A76001B375B /* Build configuration list for PBXNativeTarget "Compartz" */;
 			buildPhases = (
+				02047E2EA9547BDC13485A1D /* [CP] Check Pods Manifest.lock */,
 				F8FFF4182B923A74001B375B /* Sources */,
 				F8FFF4192B923A74001B375B /* Frameworks */,
 				F8FFF41A2B923A74001B375B /* Resources */,
+				CA690853B9BCFC515857B5C3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,13 +265,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		02047E2EA9547BDC13485A1D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Compartz-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA690853B9BCFC515857B5C3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Compartz/Pods-Compartz-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Compartz/Pods-Compartz-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Compartz/Pods-Compartz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F8FFF4182B923A74001B375B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F824B5C12B931F71005FADB3 /* User.swift in Sources */,
 				F8FFF4222B923A75001B375B /* ContentView.swift in Sources */,
+				F824B5B02B931CFE005FADB3 /* HomeView.swift in Sources */,
+				F824B5A62B930DC9005FADB3 /* API+Extensions.swift in Sources */,
+				F824B5AB2B930E35005FADB3 /* NetworkManager.swift in Sources */,
+				F824B5A82B930DD7005FADB3 /* API.swift in Sources */,
+				F824B5C32B931F80005FADB3 /* Order.swift in Sources */,
+				F824B5BD2B931F47005FADB3 /* Product.swift in Sources */,
+				F824B5B42B931D11005FADB3 /* MyPageView.swift in Sources */,
 				F8FFF4202B923A75001B375B /* CompartzApp.swift in Sources */,
+				F824B5BA2B931E55005FADB3 /* Banner.swift in Sources */,
+				F824B5B22B931D06005FADB3 /* CategoryView.swift in Sources */,
+				F824B5AE2B931C89005FADB3 /* MainTabView.swift in Sources */,
+				F824B5C52B931F96005FADB3 /* CartItem.swift in Sources */,
+				F824B5BF2B931F60005FADB3 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,7 +370,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -245,7 +433,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -266,6 +454,7 @@
 		};
 		F8FFF42B2B923A76001B375B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F824B5A92B930DEE005FADB3 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -275,6 +464,7 @@
 				DEVELOPMENT_TEAM = 96KDP35MCD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Compartz/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -295,6 +485,7 @@
 		};
 		F8FFF42C2B923A76001B375B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84F3945D72CDB868B13E2566 /* Pods-Compartz.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -304,6 +495,7 @@
 				DEVELOPMENT_TEAM = 96KDP35MCD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Compartz/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
