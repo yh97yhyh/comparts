@@ -25,6 +25,7 @@ struct HomeView: View {
                 }
             }
             .padding(.horizontal)
+            
             ScrollView(showsIndicators: false) {
                 VStack {
                     // 배너

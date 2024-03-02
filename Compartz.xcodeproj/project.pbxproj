@@ -27,6 +27,11 @@
 		F824B5DA2B932E57005FADB3 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824B5D92B932E57005FADB3 /* ProductViewModel.swift */; };
 		F88989D22B933AF900F00E7F /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88989D12B933AF900F00E7F /* CategoryViewModel.swift */; };
 		F88989D42B93416300F00E7F /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88989D32B93416300F00E7F /* ProductsView.swift */; };
+		F88989D62B93558A00F00E7F /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88989D52B93558A00F00E7F /* MyPageViewModel.swift */; };
+		F88989D82B93566A00F00E7F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88989D72B93566A00F00E7F /* ProfileView.swift */; };
+		F88989DA2B93574700F00E7F /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88989D92B93574700F00E7F /* ProfileImageView.swift */; };
+		F88989DC2B935D3300F00E7F /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88989DB2B935D3300F00E7F /* SettingView.swift */; };
+		F88989DE2B935DB900F00E7F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88989DD2B935DB900F00E7F /* LoginView.swift */; };
 		F8FFF4202B923A75001B375B /* CompartzApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FFF41F2B923A75001B375B /* CompartzApp.swift */; };
 		F8FFF4222B923A75001B375B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FFF4212B923A75001B375B /* ContentView.swift */; };
 		F8FFF4242B923A76001B375B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FFF4232B923A76001B375B /* Assets.xcassets */; };
@@ -58,6 +63,11 @@
 		F824B5D92B932E57005FADB3 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		F88989D12B933AF900F00E7F /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		F88989D32B93416300F00E7F /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
+		F88989D52B93558A00F00E7F /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
+		F88989D72B93566A00F00E7F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		F88989D92B93574700F00E7F /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
+		F88989DB2B935D3300F00E7F /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		F88989DD2B935DB900F00E7F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F8FFF41C2B923A74001B375B /* Compartz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Compartz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8FFF41F2B923A75001B375B /* CompartzApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompartzApp.swift; sourceTree = "<group>"; };
 		F8FFF4212B923A75001B375B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,6 +123,7 @@
 				F824B5D72B932CB8005FADB3 /* HomeViewModel.swift */,
 				F824B5D92B932E57005FADB3 /* ProductViewModel.swift */,
 				F88989D12B933AF900F00E7F /* CategoryViewModel.swift */,
+				F88989D52B93558A00F00E7F /* MyPageViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -125,6 +136,7 @@
 				F824B5B72B931DF7005FADB3 /* Category */,
 				F824B5B62B931DF0005FADB3 /* MyPage */,
 				F824B5AD2B931C89005FADB3 /* MainTabView.swift */,
+				F88989DD2B935DB900F00E7F /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,6 +162,9 @@
 			isa = PBXGroup;
 			children = (
 				F824B5B32B931D11005FADB3 /* MyPageView.swift */,
+				F88989D72B93566A00F00E7F /* ProfileView.swift */,
+				F88989D92B93574700F00E7F /* ProfileImageView.swift */,
+				F88989DB2B935D3300F00E7F /* SettingView.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -338,14 +353,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F88989DA2B93574700F00E7F /* ProfileImageView.swift in Sources */,
 				F824B5C12B931F71005FADB3 /* User.swift in Sources */,
 				F824B5D82B932CB8005FADB3 /* HomeViewModel.swift in Sources */,
 				F8FFF4222B923A75001B375B /* ContentView.swift in Sources */,
 				F824B5B02B931CFE005FADB3 /* HomeView.swift in Sources */,
 				F824B5A62B930DC9005FADB3 /* API+Extensions.swift in Sources */,
+				F88989DC2B935D3300F00E7F /* SettingView.swift in Sources */,
 				F824B5DA2B932E57005FADB3 /* ProductViewModel.swift in Sources */,
 				F824B5AB2B930E35005FADB3 /* NetworkManager.swift in Sources */,
 				F824B5A82B930DD7005FADB3 /* API.swift in Sources */,
+				F88989DE2B935DB900F00E7F /* LoginView.swift in Sources */,
 				F824B5C32B931F80005FADB3 /* Order.swift in Sources */,
 				F824B5BD2B931F47005FADB3 /* Product.swift in Sources */,
 				F824B5D62B932A63005FADB3 /* ProductCardView.swift in Sources */,
@@ -353,7 +371,9 @@
 				F88989D22B933AF900F00E7F /* CategoryViewModel.swift in Sources */,
 				F8FFF4202B923A75001B375B /* CompartzApp.swift in Sources */,
 				F88989D42B93416300F00E7F /* ProductsView.swift in Sources */,
+				F88989D62B93558A00F00E7F /* MyPageViewModel.swift in Sources */,
 				F824B5BA2B931E55005FADB3 /* Banner.swift in Sources */,
+				F88989D82B93566A00F00E7F /* ProfileView.swift in Sources */,
 				F824B5B22B931D06005FADB3 /* CategoryView.swift in Sources */,
 				F824B5D42B932A56005FADB3 /* BannerView.swift in Sources */,
 				F824B5AE2B931C89005FADB3 /* MainTabView.swift in Sources */,
