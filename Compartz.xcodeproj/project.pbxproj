@@ -119,6 +119,7 @@
 				F824B5B72B931DF7005FADB3 /* Category */,
 				F824B5B62B931DF0005FADB3 /* MyPage */,
 				F824B5AD2B931C89005FADB3 /* MainTabView.swift */,
+				F824B5AF2B931CFE005FADB3 /* HomeView.swift */,
 				F824B5B12B931D06005FADB3 /* CategoryView.swift */,
 				F824B5B32B931D11005FADB3 /* MyPageView.swift */,
 			);
@@ -159,7 +160,6 @@
 		F824B5B82B931DFE005FADB3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				F824B5AF2B931CFE005FADB3 /* HomeView.swift */,
 				F824B5D32B932A56005FADB3 /* BannerView.swift */,
 				F824B5D52B932A63005FADB3 /* ProductCardView.swift */,
 			);
