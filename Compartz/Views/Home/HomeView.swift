@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var viewModel: HomeViewModel
+    @StateObject var viewModel = HomeViewModel.shared
     
     var body: some View {
         VStack {
@@ -17,7 +17,7 @@ struct HomeView: View {
                     .font(.headline)
                 Spacer()
                 Button {
-                    
+                    // cart
                 } label: {
                     Image(systemName: "cart.fill")
                         .imageScale(.large)
@@ -70,5 +70,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView(viewModel: HomeViewModel())
+    HomeView()
 }

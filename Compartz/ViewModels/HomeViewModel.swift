@@ -8,6 +8,8 @@
 import Foundation
 
 class HomeViewModel: ObservableObject {
+    static let shared = HomeViewModel()
+    
     @Published var banners: [Banner]
     @Published var raffleProduct: Product
     @Published var recommendations: [Product]

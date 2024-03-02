@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BannerView: View {
-    @StateObject var viewModel: HomeViewModel
+    @StateObject var viewModel = HomeViewModel.shared
 
     var body: some View {
         TabView {
@@ -23,5 +23,5 @@ struct BannerView: View {
 }
 
 #Preview {
-    BannerView(viewModel: HomeViewModel())
+    BannerView()
 }
