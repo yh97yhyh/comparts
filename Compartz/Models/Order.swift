@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Order: Identifiable, Codable {
+struct Order: Identifiable, Codable, Hashable {
     var id: Int
     var products: [Product]
     var createdDatetime: String
-    var totalPrice: Double
+    var totalPrice: Int
 }
 
 extension Order {

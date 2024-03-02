@@ -9,10 +9,11 @@ import SwiftUI
 
 struct MainTabView: View {
     @State private var selectedIndex = 0
+    @StateObject var homeViewModel: HomeViewModel
     
     var body: some View {
         TabView(selection: $selectedIndex) {
-            HomeView()
+            HomeView(viewModel: homeViewModel)
                 .onAppear {
                     selectedIndex = 0
                 }
@@ -37,5 +38,5 @@ struct MainTabView: View {
 }
 
 #Preview {
-    MainTabView()
+    MainTabView(homeViewModel: HomeViewModel())
 }

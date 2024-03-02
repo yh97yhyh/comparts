@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Banner: Identifiable, Codable {
+struct Banner: Identifiable, Codable, Hashable {
     var id: Int
     var name: String
     var image: String
@@ -16,8 +16,8 @@ struct Banner: Identifiable, Codable {
 
 extension Banner {
     static var MOCK_BANNERS: [Banner] = [
-        .init(id: 0, name: "banner1", image: "banner-01"),
         .init(id: 1, name: "banner2", image: "banner-02"),
+        .init(id: 0, name: "banner1", image: "banner-01"),
         .init(id: 2, name: "banner3", image: "banner-03"),
     ]
 }

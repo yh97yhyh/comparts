@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Product: Identifiable, Codable {
+struct Product: Identifiable, Codable, Hashable {
     var id: Int
     var name: String
     var image: String
-    var price: Double
+    var price: Int
     var descriptionImage: String?
     var description: String
     var createdDatetime: String
