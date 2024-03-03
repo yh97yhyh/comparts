@@ -11,37 +11,39 @@ struct MyPageView: View {
     @StateObject var viewModel = MyPageViewModel.shared
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("Compartz")
-                    .font(.headline)
-                Spacer()
-            }
-            .padding(.horizontal)
-            .padding(.bottom)
-            
-            ProfileView()
+        NavigationView {
+            VStack {
+                HStack {
+                    Text("Compartz")
+                        .font(.headline)
+                    Spacer()
+                }
+                .padding(.horizontal)
                 .padding(.bottom)
-            
-            HStack {
-                Button {
-                    print("click")
-                } label: {
-                    Text("주문내역")
-                }
-                .buttonStyle(MyPageButtonStyle())
                 
-                Button {
-                    print("click")
-                } label: {
-                    Text("장바구니")
-                }
-                .buttonStyle(MyPageButtonStyle())
+                ProfileHeaderView()
+                    .padding(.bottom)
                 
+                HStack {
+                    Button {
+                        print("click")
+                    } label: {
+                        Text("주문내역")
+                    }
+                    .buttonStyle(MyPageButtonStyle())
+                    
+                    Button {
+                        print("click")
+                    } label: {
+                        Text("장바구니")
+                    }
+                    .buttonStyle(MyPageButtonStyle())
+                    
+                }
+                .padding(.bottom)
+                
+                SettingView()
             }
-            .padding(.bottom)
-            
-            SettingView()
         }
     }
 }

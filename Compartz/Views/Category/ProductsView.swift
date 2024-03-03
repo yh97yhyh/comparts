@@ -31,19 +31,16 @@ struct ProductsView: View {
                     }
                     .buttonStyle(FilterButtonStyle())
                     .font(.subheadline)
-                    //                Button("필터") {
-                    //                    print("click")
-                    //                }
-                    //                .buttonStyle(FilterButtonStyle())
-                    //                .font(.subheadline)
                     
                 }
                 .padding(.horizontal)
                 
                 LazyVGrid(columns: Array(repeating: GridItem(), count: 2), spacing: 16) {
                     ForEach(filteredProducts, id: \.self) { product in
-                        ProductCardView(viewModel: ProductViewModel(product))
-                            .frame(width: 200, height: nil)
+                        NavigationLink(destination: ProductDetailView(viewModel: ProductViewModel(product))) {
+                            ProductCardView(viewModel: ProductViewModel(product))
+                                .frame(width: 200, height: nil)
+                        }
                     }
                 }
                 .padding()

@@ -1,5 +1,5 @@
 //
-//  ProfileView.swift
+//  ProfileHeaderView.swift
 //  Compartz
 //
 //  Created by 영현 on 3/2/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProfileView: View {
+struct ProfileHeaderView: View {
     @StateObject var viewModel = MyPageViewModel.shared
     
     var body: some View {
@@ -32,5 +32,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView()
+    ProfileHeaderView()
 }

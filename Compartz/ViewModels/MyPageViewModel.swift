@@ -19,4 +19,26 @@ class MyPageViewModel: ObservableObject {
         self.orders = orders
         self.cartItems = cartItems
     }
+    
+    func addOrder(newOrder: Order) {
+        orders.append(newOrder)
+    }
+    
+    func removeOrder(at index: Int) {
+        guard orders.indices.contains(index) else {
+            return
+        }
+        orders.remove(at: index)
+    }
+
+    func addCartItem(newCartItem: CartItem) {
+        cartItems.append(newCartItem)
+    }
+    
+    func removeCartItem(at index: Int) {
+        guard cartItems.indices.contains(index) else {
+            return
+        }
+        cartItems.remove(at: index)
+    }
 }
