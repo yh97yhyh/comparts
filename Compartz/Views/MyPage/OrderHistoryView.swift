@@ -34,9 +34,12 @@ struct OrderHistoryView: View {
                 Divider()
                 
                 VStack {
+//                    ForEach(viewModel.orders.indices, id: \.self) { index in
+//                        OrderCardView(viewModel: OrderViewModel(viewModel.orders[index]))
+//                        Divider()
+//                    }
                     ForEach(viewModel.orders, id:\.self) { order in
                         OrderCardView(viewModel: OrderViewModel(order))
-                        
                         Divider()
                     }
                 }

@@ -11,6 +11,20 @@ struct CartView: View {
     @StateObject var viewModel = MyPageViewModel.shared
     @Environment(\.dismiss) private var dismiss
     @State var isAll = false
+    
+    var selectedItemCount: Int {
+        viewModel.cartItems.filter { $0.selected }.count
+    }
+    
+    var totalPrice: Int {
+        var sum = 0
+        for cartItem in viewModel.cartItems {
+            if cartItem.selected {
+                sum += cartItem.product.price * cartItem.count
+            }
+        }
+        return sum
+    }
 
     var body: some View {
         VStack {
@@ -35,7 +49,7 @@ struct CartView: View {
                 Toggle("전체선택", isOn: $isAll)
                     .toggleStyle(CheckboxStyle())
                 
-                Text("( / \(viewModel.cartItems.count))")
+                Text("(\(selectedItemCount) / \(viewModel.cartItems.count))")
                 
                 Spacer()
                 
@@ -50,13 +64,19 @@ struct CartView: View {
             Divider()
             
             ScrollView {
-                
+                ForEach(viewModel.cartItems.indices, id: \.self) { index in
+                    CartCardView(viewModel: CartViewModel(viewModel.cartItems[index]),
+                                 isSelected: $viewModel.cartItems[index].selected,
+                                 count: $viewModel.cartItems[index].count, 
+                                 index: index)
+                    Divider()
+                }
             }
             
             Button {
                 print("click")
             } label: {
-                Text("총 0원 결제하기")
+                Text("총 \(totalPrice)원 결제하기")
             }
             .buttonStyle(ProductButtonStyle(height: 56, isMaxWidth: true))
         }
@@ -76,7 +96,7 @@ struct CheckboxStyle: ToggleStyle {
             Image(systemName: configuration.isOn ? "checkmark.square" : "square")
                 .resizable()
                 .frame(width: 24, height: 24)
-                .foregroundColor(configuration.isOn ? .blue : .gray)
+                .foregroundColor(configuration.isOn ? .black : .gray)
 //                .font(.system(size: 20, weight: .regular, design: .default))
                 configuration.label
         }

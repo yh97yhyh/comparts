@@ -39,6 +39,7 @@ class MyPageViewModel: ObservableObject {
         guard cartItems.indices.contains(index) else {
             return
         }
+        print("delete \(index) - \(cartItems[index].product.name)")
         cartItems.remove(at: index)
     }
 }
