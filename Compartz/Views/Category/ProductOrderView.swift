@@ -45,13 +45,13 @@ struct ProductOrderView: View {
                 } label: {
                     Text("결제하기")
                 }
-                .buttonStyle(ProductButtonStyle(height: 40, isMaxWidth: true))
+                .buttonStyle(ProductButtonStyle(width: 180, height: 40))
                 Button {
                     
                 } label: {
                     Text("장바구니")
                 }
-                .buttonStyle(ProductButtonStyle(height: 40, isMaxWidth: true))
+                .buttonStyle(ProductButtonStyle(width: 180, height: 40))
             }
         }
     }

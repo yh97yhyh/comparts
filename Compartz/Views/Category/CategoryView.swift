@@ -12,20 +12,20 @@ struct CategoryView: View {
     @State private var selectedCategory: Int = 0
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             VStack {
                 HStack {
-                    Button {
-                        // back
-                    } label: {
-                        Image(systemName: "chevron.backward")
-                            .imageScale(.large)
-                            .foregroundColor(.black)
-                    }
+//                    Button {
+//                        // back
+//                    } label: {
+//                        Image(systemName: "chevron.backward")
+//                            .imageScale(.large)
+//                            .foregroundColor(.black)
+//                    }
+                    Text("Compartz")
+                        .font(.headline)
                     Spacer()
-                    Button {
-                        // cart
-                    } label: {
+                    NavigationLink(destination: CartView()) {
                         Image(systemName: "cart.fill")
                             .imageScale(.large)
                             .foregroundColor(.black)
@@ -57,7 +57,9 @@ struct CategoryView: View {
                 
                 ProductsView(selectedCategory: $selectedCategory)
             }
-        }
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
+//        }
     }
 }
 

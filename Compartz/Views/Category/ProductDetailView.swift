@@ -39,12 +39,15 @@ struct ProductDetailView: View {
                     .scaledToFill()
                     .clipped()
                     .frame(width: 250, height: 250)
+                    .padding(.horizontal)
                 
                 Divider()
                 
                 Text(viewModel.product.name)
                     .font(.headline)
                     .fontWeight(.semibold)
+                    .padding(.horizontal)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 
                 HStack {
                     Text("\(viewModel.product.price) 원")
@@ -58,6 +61,7 @@ struct ProductDetailView: View {
                     .font(.footnote)
                     .foregroundColor(.gray)
                     .padding(.horizontal)
+                    .padding(.bottom, 8)
                 
                 if let productImage = viewModel.product.descriptionImage {
                     Image(productImage)

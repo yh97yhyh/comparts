@@ -11,12 +11,22 @@ struct MyPageView: View {
     @StateObject var viewModel = MyPageViewModel.shared
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             VStack {
                 HStack {
                     Text("Compartz")
                         .font(.headline)
                     Spacer()
+                    
+                    Button {
+                        // cart
+                    } label: {
+                        Image(systemName: "cart.fill")
+                            .imageScale(.large)
+                            .foregroundColor(.black)
+                    }
+                    .disabled(true)
+                    .opacity(0.0)
                 }
                 .padding(.horizontal)
                 .padding(.bottom)
@@ -25,16 +35,12 @@ struct MyPageView: View {
                     .padding(.bottom)
                 
                 HStack {
-                    Button {
-                        print("click")
-                    } label: {
+                    NavigationLink(destination: OrderHistoryView()) {
                         Text("주문내역")
                     }
                     .buttonStyle(MyPageButtonStyle())
                     
-                    Button {
-                        print("click")
-                    } label: {
+                    NavigationLink(destination: CartView()) {
                         Text("장바구니")
                     }
                     .buttonStyle(MyPageButtonStyle())
@@ -44,7 +50,9 @@ struct MyPageView: View {
                 
                 SettingView()
             }
-        }
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
+//        }
     }
 }
 

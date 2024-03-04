@@ -28,6 +28,7 @@ struct ProductCardView: View {
                 Text("\(viewModel.product.price)")
                     .font(.body)
                     .fontWeight(.semibold)
+                    .lineLimit(1)
             }
         }
         .padding()
