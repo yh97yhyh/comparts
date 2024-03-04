@@ -10,7 +10,10 @@ import SwiftUI
 struct CartView: View {
     @StateObject var viewModel = MyPageViewModel.shared
     @Environment(\.dismiss) private var dismiss
-    @State var isAll = false
+    
+    var allItemsSelected: Bool {
+        return !viewModel.cartItems.contains { !$0.selected }
+    }
     
     var selectedItemCount: Int {
         viewModel.cartItems.filter { $0.selected }.count
@@ -25,7 +28,7 @@ struct CartView: View {
         }
         return sum
     }
-
+    
     var body: some View {
         VStack {
             HStack {
@@ -46,8 +49,13 @@ struct CartView: View {
             .padding(.horizontal)
             
             HStack {
-                Toggle("전체선택", isOn: $isAll)
+                Toggle("전체선택", isOn: $viewModel.isCartItemsAllSelected)
                     .toggleStyle(CheckboxStyle())
+                    .onChange(of: viewModel.isCartItemsAllSelected) { newValue in
+                        viewModel.cartItems.indices.forEach { index in
+                            viewModel.cartItems[index].selected = newValue
+                        }
+                    }
                 
                 Text("(\(selectedItemCount) / \(viewModel.cartItems.count))")
                 
@@ -67,7 +75,7 @@ struct CartView: View {
                 ForEach(viewModel.cartItems.indices, id: \.self) { index in
                     CartCardView(viewModel: CartViewModel(viewModel.cartItems[index]),
                                  isSelected: $viewModel.cartItems[index].selected,
-                                 count: $viewModel.cartItems[index].count, 
+                                 count: $viewModel.cartItems[index].count,
                                  index: index)
                     Divider()
                 }
@@ -91,17 +99,16 @@ import SwiftUI
 
 struct CheckboxStyle: ToggleStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
-
         return HStack {
             Image(systemName: configuration.isOn ? "checkmark.square" : "square")
                 .resizable()
                 .frame(width: 24, height: 24)
                 .foregroundColor(configuration.isOn ? .black : .gray)
-//                .font(.system(size: 20, weight: .regular, design: .default))
-                configuration.label
+            //                .font(.system(size: 20, weight: .regular, design: .default))
+            configuration.label
         }
         .onTapGesture { configuration.isOn.toggle() }
-
+        
     }
 }
 

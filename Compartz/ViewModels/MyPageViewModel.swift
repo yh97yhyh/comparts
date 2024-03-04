@@ -13,11 +13,13 @@ class MyPageViewModel: ObservableObject {
     @Published var user: User
     @Published var orders: [Order]
     @Published var cartItems: [CartItem]
+    @Published var isCartItemsAllSelected: Bool
     
-    init(_ user: User = User.MOCK_USERS[0], _ orders: [Order] = Order.MOCK_ORDERS, _ cartItems: [CartItem] = CartItem.MOCK_CARTITEMS) {
+    init(_ user: User = User.MOCK_USERS[0], _ orders: [Order] = Order.MOCK_ORDERS, _ cartItems: [CartItem] = CartItem.MOCK_CARTITEMS, _ isCartItemsAllSelected: Bool = true) {
         self.user = user
         self.orders = orders
         self.cartItems = cartItems
+        self.isCartItemsAllSelected = isCartItemsAllSelected
     }
     
     func addOrder(newOrder: Order) {
