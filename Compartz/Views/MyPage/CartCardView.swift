@@ -78,7 +78,6 @@ struct CartCardView: View {
 
 struct CircleCheckboxStyle: ToggleStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
-        
         return HStack {
             Image(systemName: configuration.isOn ? "checkmark.circle" : "circle")
                 .resizable()

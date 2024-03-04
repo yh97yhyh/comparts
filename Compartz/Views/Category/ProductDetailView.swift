@@ -30,6 +30,8 @@ struct ProductDetailView: View {
                         .imageScale(.large)
                         .foregroundColor(.black)
                 }
+                .disabled(true)
+                .opacity(0.0)
             }
             .padding(.horizontal)
             
@@ -108,8 +110,8 @@ struct ProductButtonStyle: ButtonStyle {
                 .fontWeight(.semibold)
                 .frame(width: width, height: height)
                 .frame(maxWidth: .infinity)
-                .background(.white)
-                .foregroundColor(.black)
+                .background(.gray)
+                .foregroundColor(.white)
                 .overlay(
                     Rectangle()
                         .stroke(.gray, lineWidth: 1)
@@ -120,8 +122,8 @@ struct ProductButtonStyle: ButtonStyle {
                 .font(.subheadline)
                 .fontWeight(.semibold)
                 .frame(width: width, height: height)
-                .background(.white)
-                .foregroundColor(.black)
+                .background(.gray)
+                .foregroundColor(.white)
                 .cornerRadius(6)
                 .overlay(
                     RoundedRectangle(cornerRadius: 6)

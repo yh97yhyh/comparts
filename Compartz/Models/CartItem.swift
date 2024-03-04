@@ -20,6 +20,6 @@ extension CartItem {
     static let MOCK_CARTITEMS: [CartItem] = [
         .init(id: 0, product: Product.MOCK_PRODUCT_0, count: 1, selected: true),
         .init(id: 1, product: Product.MOCK_PRODUCT_1, count: 1, selected: true),
-        .init(id: 2, product: Product.MOCK_PRODUCT_2, count: 1, selected: false),
+        .init(id: 2, product: Product.MOCK_PRODUCT_2, count: 1, selected: true),
     ]
 }
