@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CartView: View {
-    @StateObject var viewModel = MyPageViewModel.shared
+    @ObservedObject var viewModel = MyPageViewModel.shared
     @Environment(\.dismiss) private var dismiss
     
     var allItemsSelected: Bool {
@@ -72,11 +72,17 @@ struct CartView: View {
             Divider()
             
             ScrollView {
-                ForEach(viewModel.cartItems.indices, id: \.self) { index in
-                    CartCardView(viewModel: CartViewModel(viewModel.cartItems[index]),
-                                 isSelected: $viewModel.cartItems[index].selected,
-                                 count: $viewModel.cartItems[index].count,
-                                 index: index)
+//                ForEach(viewModel.cartItems.indices, id: \.self) { index in
+//                    CartCardView(viewModel: CartViewModel(viewModel.cartItems[index]),
+//                                 isSelected: $viewModel.cartItems[index].selected,
+//                                 count: $viewModel.cartItems[index].count,
+//                                 cartItemId: $viewModel.cartItems[index].id)
+//                    Divider()
+//                }
+                ForEach($viewModel.cartItems) { $cartItem in
+                    CartCardView(viewModel: CartViewModel(cartItem),
+                                 isSelected: $cartItem.selected,
+                                 count: $cartItem.count)
                     Divider()
                 }
             }

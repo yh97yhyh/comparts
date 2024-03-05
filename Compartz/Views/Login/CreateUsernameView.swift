@@ -42,7 +42,7 @@ struct CreateUsernameView: View {
                 .modifier(IGTextFieldModifier())
             
             NavigationLink {
-                CreateUsernameView()
+                CreatePasswordView()
             } label: {
                 Text("다음")
             }

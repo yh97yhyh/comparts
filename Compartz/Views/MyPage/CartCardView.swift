@@ -12,7 +12,8 @@ struct CartCardView: View {
     @StateObject var viewModel: CartViewModel
     @Binding var isSelected: Bool
     @Binding var count: Int
-    var index: Int
+//    var cartItemId: Int
+//    var index: Int
     
     var body: some View {
         VStack {
@@ -20,7 +21,8 @@ struct CartCardView: View {
                 Spacer()
                 Button {
                     print("\(index)")
-                    myPageViewModel.removeCartItem(at: index)
+//                    myPageViewModel.removeCartItem(at: index)
+                    myPageViewModel.removeCartItem(id: viewModel.cart.id)
                 } label: {
                     Image(systemName: "xmark")
                         .imageScale(.large)
@@ -92,5 +94,5 @@ struct CircleCheckboxStyle: ToggleStyle {
 }
 
 #Preview {
-    CartCardView(viewModel: CartViewModel(), isSelected: .constant(true), count: .constant(1), index: 1)
+    CartCardView(viewModel: CartViewModel(), isSelected: .constant(true), count: .constant(1))
 }
