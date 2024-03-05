@@ -12,7 +12,7 @@ struct MainTabView: View {
     @StateObject var homeViewModel: HomeViewModel
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 Color.clear
                     .ignoresSafeArea()

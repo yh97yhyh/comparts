@@ -15,7 +15,7 @@ struct CreateUsernameView: View {
         VStack {
             HStack {
                 Button {
-                    // back
+                    dismiss()
                 } label: {
                     Image(systemName: "chevron.backward")
                         .imageScale(.large)
@@ -42,7 +42,7 @@ struct CreateUsernameView: View {
                 .modifier(IGTextFieldModifier())
             
             NavigationLink {
-                CreateUsernameView()
+                CreatePasswordView()
             } label: {
                 Text("다음")
             }

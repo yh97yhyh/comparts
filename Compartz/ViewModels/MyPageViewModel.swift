@@ -32,7 +32,7 @@ class MyPageViewModel: ObservableObject {
         }
         orders.remove(at: index)
     }
-
+    
     func addCartItem(newCartItem: CartItem) {
         cartItems.append(newCartItem)
     }
@@ -41,7 +41,10 @@ class MyPageViewModel: ObservableObject {
         guard cartItems.indices.contains(index) else {
             return
         }
-        print("delete \(index) - \(cartItems[index].product.name)")
         cartItems.remove(at: index)
+    }
+    
+    func removeCartItem(id: Int) {
+        cartItems.removeAll { $0.id == id }
     }
 }
