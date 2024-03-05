@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ProductOrderView: View {
+    @StateObject var myPageViewModel = MyPageViewModel.shared
     @StateObject var viewModel: ProductViewModel
-    @State var orderCount = 0
+    @State var orderCount = 1
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         VStack {
@@ -27,7 +29,7 @@ struct ProductOrderView: View {
                 Text("\(orderCount)")
                     .font(.headline)
                 Button {
-                    if orderCount > 0 {
+                    if orderCount > 1 {
                         orderCount -= 1
                     }
                 } label: {
@@ -47,7 +49,8 @@ struct ProductOrderView: View {
                 }
                 .buttonStyle(MyPageButtonStyle())
                 Button {
-                    
+                    myPageViewModel.addCartItem(newCartItem: CartItem(id: UUID().hashValue, product: viewModel.product, count: orderCount, selected: true))
+                    dismiss()
                 } label: {
                     Text("장바구니")
                 }
