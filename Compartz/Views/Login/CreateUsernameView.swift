@@ -15,7 +15,7 @@ struct CreateUsernameView: View {
         VStack {
             HStack {
                 Button {
-                    // back
+                    dismiss()
                 } label: {
                     Image(systemName: "chevron.backward")
                         .imageScale(.large)

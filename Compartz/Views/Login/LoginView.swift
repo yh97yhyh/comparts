@@ -82,6 +82,9 @@ struct LoginView: View {
             }
 //            .padding()
         }
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
+        
     }
 }
 

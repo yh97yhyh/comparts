@@ -12,11 +12,7 @@ class MyPageViewModel: ObservableObject {
     
     @Published var user: User
     @Published var orders: [Order]
-    @Published var cartItems: [CartItem] {
-        didSet {
-            print("\(cartItems)")
-        }
-    }
+    @Published var cartItems: [CartItem]
     @Published var isCartItemsAllSelected: Bool
     
     init(_ user: User = User.MOCK_USERS[0], _ orders: [Order] = Order.MOCK_ORDERS, _ cartItems: [CartItem] = CartItem.MOCK_CARTITEMS, _ isCartItemsAllSelected: Bool = true) {
@@ -45,12 +41,10 @@ class MyPageViewModel: ObservableObject {
         guard cartItems.indices.contains(index) else {
             return
         }
-        print("delete \(index) - \(cartItems[index].product.name)")
         cartItems.remove(at: index)
     }
     
     func removeCartItem(id: Int) {
-        print("delete cartItem id - \(id) ")
         cartItems.removeAll { $0.id == id }
     }
 }

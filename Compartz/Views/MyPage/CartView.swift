@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CartView: View {
-    @ObservedObject var viewModel = MyPageViewModel.shared
+    @StateObject var viewModel = MyPageViewModel.shared
     @Environment(\.dismiss) private var dismiss
     
     var allItemsSelected: Bool {

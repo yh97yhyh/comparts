@@ -45,13 +45,13 @@ struct ProductOrderView: View {
                 } label: {
                     Text("결제하기")
                 }
-                .buttonStyle(ProductButtonStyle(width: 180, height: 40))
+                .buttonStyle(MyPageButtonStyle())
                 Button {
                     
                 } label: {
                     Text("장바구니")
                 }
-                .buttonStyle(ProductButtonStyle(width: 180, height: 40))
+                .buttonStyle(MyPageButtonStyle())
             }
         }
     }
