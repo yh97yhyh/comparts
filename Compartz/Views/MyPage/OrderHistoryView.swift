@@ -31,6 +31,13 @@ struct OrderHistoryView: View {
             .padding(.horizontal)
             
             ScrollView {
+                HStack {
+                    Text("총 \(viewModel.orders.count)개")
+                        .font(.subheadline)
+                    Spacer()
+                }
+                .padding()
+                
                 Divider()
                 
                 VStack {

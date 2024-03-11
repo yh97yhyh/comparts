@@ -10,9 +10,3 @@ import Foundation
 extension API {
     
 }
-
-extension Bundle {
-    var apiKey: String? {
-        return infoDictionary?["API_KEY"] as? String
-    }
-}

@@ -16,7 +16,7 @@ struct LoginView: View {
             VStack {
                 Spacer()
                 
-                Text("Compartz")
+                Text("컴파츠")
                     .font(.title)
                     .fontWeight(.semibold)
                 

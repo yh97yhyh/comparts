@@ -48,6 +48,7 @@
 		F8898A032B95FCC500F00E7F /* CompleteSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8898A022B95FCC500F00E7F /* CompleteSignUpView.swift */; };
 		F8898A052B95FD6400F00E7F /* RegisterationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8898A042B95FD6400F00E7F /* RegisterationViewModel.swift */; };
 		F8898A072B95FDF700F00E7F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8898A062B95FDF600F00E7F /* LoginViewModel.swift */; };
+		F89491282B9B086200437A2E /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89491272B9B086200437A2E /* Bundle+Extensions.swift */; };
 		F8FFF4202B923A75001B375B /* CompartzApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FFF41F2B923A75001B375B /* CompartzApp.swift */; };
 		F8FFF4222B923A75001B375B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FFF4212B923A75001B375B /* ContentView.swift */; };
 		F8FFF4242B923A76001B375B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FFF4232B923A76001B375B /* Assets.xcassets */; };
@@ -100,6 +101,7 @@
 		F8898A022B95FCC500F00E7F /* CompleteSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpView.swift; sourceTree = "<group>"; };
 		F8898A042B95FD6400F00E7F /* RegisterationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationViewModel.swift; sourceTree = "<group>"; };
 		F8898A062B95FDF600F00E7F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		F89491272B9B086200437A2E /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		F8FFF41C2B923A74001B375B /* Compartz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Compartz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8FFF41F2B923A75001B375B /* CompartzApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompartzApp.swift; sourceTree = "<group>"; };
 		F8FFF4212B923A75001B375B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				F88989E92B953F2600F00E7F /* View+Extensions.swift */,
+				F89491272B9B086200437A2E /* Bundle+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				F8898A072B95FDF700F00E7F /* LoginViewModel.swift in Sources */,
 				F824B5BD2B931F47005FADB3 /* Product.swift in Sources */,
 				F824B5D62B932A63005FADB3 /* ProductCardView.swift in Sources */,
+				F89491282B9B086200437A2E /* Bundle+Extensions.swift in Sources */,
 				F88989E72B9538EA00F00E7F /* ProductOrderView.swift in Sources */,
 				F824B5B42B931D11005FADB3 /* MyPageView.swift in Sources */,
 				F88989D22B933AF900F00E7F /* CategoryViewModel.swift in Sources */,

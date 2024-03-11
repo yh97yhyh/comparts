@@ -14,7 +14,7 @@ struct MyPageView: View {
 //        NavigationView {
             VStack {
                 HStack {
-                    Text("Compartz")
+                    Text("컴파츠")
                         .font(.headline)
                     Spacer()
                     

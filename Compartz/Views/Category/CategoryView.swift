@@ -12,54 +12,70 @@ struct CategoryView: View {
     @State private var selectedCategory: Int = 0
     
     var body: some View {
-//        NavigationView {
-            VStack {
-                HStack {
-//                    Button {
-//                        // back
-//                    } label: {
-//                        Image(systemName: "chevron.backward")
-//                            .imageScale(.large)
-//                            .foregroundColor(.black)
-//                    }
-                    Text("Compartz")
-                        .font(.headline)
-                    Spacer()
-                    NavigationLink(destination: CartView()) {
-                        Image(systemName: "cart.fill")
-                            .imageScale(.large)
-                            .foregroundColor(.black)
-                    }
+        VStack {
+            HStack {
+                Text("컴파츠")
+                    .font(.headline)
+                Spacer()
+                NavigationLink(destination: CartView()) {
+                    Image(systemName: "cart.fill")
+                        .imageScale(.large)
+                        .foregroundColor(.black)
                 }
-                .padding(.horizontal)
-                
+            }
+            .padding(.horizontal)
+            
+            ScrollViewReader { scrollProxy in
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
                         HStack(spacing: 20) {
                             Button("전체") {
-                                selectedCategory = 0
-                                print("click")
+                                withAnimation {
+                                    selectedCategory = 0
+                                    scrollProxy.scrollTo(0, anchor: .center)
+                                }
                             }
                             .buttonStyle(CategoryButtonStyle(isSelected: selectedCategory == 0))
+                            .id(0)
                             ForEach(viewModel.categories, id: \.self) { category in
                                 Button(category.name) {
-                                    selectedCategory = category.id
-                                    print("click")
+                                    withAnimation {
+                                        selectedCategory = category.id
+                                        scrollProxy.scrollTo(selectedCategory, anchor: .center)
+                                    }
                                 }
                                 .buttonStyle(CategoryButtonStyle(isSelected: selectedCategory == category.id))
+                                .id(category.id)
                             }
                         }
+                        
                     }
                     .padding()
                 }
-                Divider()
-                    .padding(.bottom)
-                
-                ProductsView(selectedCategory: $selectedCategory)
+                .onChange(of: selectedCategory) { newCategory in
+                    let scrollToCategoryID = newCategory == 0 ? 0 : viewModel.categories[newCategory - 1].id
+                    scrollProxy.scrollTo(scrollToCategoryID, anchor: .center)
+                }
             }
-            .navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
-//        }
+            
+            Divider()
+                .padding(.bottom)
+            
+            TabView(selection: $selectedCategory) {
+                ForEach(0...viewModel.categories.count, id: \.self) { index in
+                    if index == 0 {
+                        ProductsView(selectedCategory: $selectedCategory)
+                            .tag(0)
+                    } else {
+                        ProductsView(selectedCategory: $selectedCategory)
+                            .tag(viewModel.categories[index-1].id)
+                    }
+                }
+            }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+        }
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }
 
