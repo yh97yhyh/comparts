@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var homeViewModel = HomeViewModel()
+    
     var body: some View {
         VStack {
-            MainTabView(homeViewModel: homeViewModel)
+            MainTabView()
         }
     }
 }

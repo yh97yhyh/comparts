@@ -14,14 +14,7 @@ struct CategoryView: View {
     var body: some View {
         VStack {
             HStack {
-                //                    Button {
-                //                        // back
-                //                    } label: {
-                //                        Image(systemName: "chevron.backward")
-                //                            .imageScale(.large)
-                //                            .foregroundColor(.black)
-                //                    }
-                Text("Compartz")
+                Text("컴파츠")
                     .font(.headline)
                 Spacer()
                 NavigationLink(destination: CartView()) {

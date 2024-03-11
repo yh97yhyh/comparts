@@ -14,7 +14,7 @@ struct HomeView: View {
         //        NavigationView {
         VStack {
             HStack {
-                Text("Compartz")
+                Text("컴파츠")
                     .font(.headline)
                 Spacer()
                 NavigationLink(destination: CartView()) {

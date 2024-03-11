@@ -21,20 +21,20 @@ struct ProductsView: View {
     
     var body: some View {
         VStack {
-            ScrollView(showsIndicators: false) {
-                HStack {
-                    Text("총 \(filteredProducts.count)개")
-                        .font(.subheadline)
-                    Spacer()
-                    Button("신상품순") {
-                        print("click")
-                    }
-                    .buttonStyle(FilterButtonStyle())
+            HStack {
+                Text("총 \(filteredProducts.count)개")
                     .font(.subheadline)
-                    
+                Spacer()
+                Button("신상품순") {
+                    print("click")
                 }
-                .padding(.horizontal)
+                .buttonStyle(FilterButtonStyle())
+                .font(.subheadline)
                 
+            }
+            .padding(.horizontal)
+            
+            ScrollView(showsIndicators: false) {
                 LazyVGrid(columns: Array(repeating: GridItem(), count: 2), spacing: 16) {
                     ForEach(filteredProducts, id: \.self) { product in
                         NavigationLink(destination: ProductDetailView(viewModel: ProductViewModel(product))) {

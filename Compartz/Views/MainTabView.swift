@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MainTabView: View {
     @State private var selectedIndex = 0
-    @StateObject var homeViewModel: HomeViewModel
     
     var body: some View {
         NavigationStack {
@@ -17,7 +16,7 @@ struct MainTabView: View {
                 Color.clear
                     .ignoresSafeArea()
                 TabView(selection: $selectedIndex) {
-                    HomeView(viewModel: homeViewModel)
+                    HomeView()
                         .onAppear {
                             selectedIndex = 0
                         }
@@ -53,5 +52,5 @@ struct MainTabView: View {
 }
 
 #Preview {
-    MainTabView(homeViewModel: HomeViewModel())
+    MainTabView()
 }
