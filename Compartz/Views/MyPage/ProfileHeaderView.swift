@@ -19,7 +19,7 @@ struct ProfileHeaderView: View {
                     Text("\(viewModel.user.nickname) 님")
                         .font(.subheadline)
                         .fontWeight(.semibold)
-                    Text(viewModel.user.userId)
+                    Text(viewModel.user.mail)
                         .font(.footnote)
                     Text(viewModel.user.phone)
                         .font(.footnote)

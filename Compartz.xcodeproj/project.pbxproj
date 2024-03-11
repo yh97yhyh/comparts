@@ -43,12 +43,14 @@
 		F88989F62B959DCE00F00E7F /* CartCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88989F52B959DCE00F00E7F /* CartCardView.swift */; };
 		F88989F82B959DDC00F00E7F /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88989F72B959DDC00F00E7F /* CartViewModel.swift */; };
 		F88989FD2B95F99C00F00E7F /* AddEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88989FC2B95F99C00F00E7F /* AddEmailView.swift */; };
-		F88989FF2B95FAD600F00E7F /* CreateUsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88989FE2B95FAD600F00E7F /* CreateUsernameView.swift */; };
+		F88989FF2B95FAD600F00E7F /* CreateNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88989FE2B95FAD600F00E7F /* CreateNameView.swift */; };
 		F8898A012B95FC7F00F00E7F /* CreatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8898A002B95FC7F00F00E7F /* CreatePasswordView.swift */; };
 		F8898A032B95FCC500F00E7F /* CompleteSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8898A022B95FCC500F00E7F /* CompleteSignUpView.swift */; };
 		F8898A052B95FD6400F00E7F /* RegisterationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8898A042B95FD6400F00E7F /* RegisterationViewModel.swift */; };
 		F8898A072B95FDF700F00E7F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8898A062B95FDF600F00E7F /* LoginViewModel.swift */; };
 		F89491282B9B086200437A2E /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89491272B9B086200437A2E /* Bundle+Extensions.swift */; };
+		F8D880A42B9F8DD2005D421F /* CreateNicknamePhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D880A32B9F8DD2005D421F /* CreateNicknamePhoneView.swift */; };
+		F8D880A62B9F946A005D421F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D880A52B9F946A005D421F /* AuthService.swift */; };
 		F8FFF4202B923A75001B375B /* CompartzApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FFF41F2B923A75001B375B /* CompartzApp.swift */; };
 		F8FFF4222B923A75001B375B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FFF4212B923A75001B375B /* ContentView.swift */; };
 		F8FFF4242B923A76001B375B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FFF4232B923A76001B375B /* Assets.xcassets */; };
@@ -96,12 +98,14 @@
 		F88989F52B959DCE00F00E7F /* CartCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCardView.swift; sourceTree = "<group>"; };
 		F88989F72B959DDC00F00E7F /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		F88989FC2B95F99C00F00E7F /* AddEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmailView.swift; sourceTree = "<group>"; };
-		F88989FE2B95FAD600F00E7F /* CreateUsernameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameView.swift; sourceTree = "<group>"; };
+		F88989FE2B95FAD600F00E7F /* CreateNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNameView.swift; sourceTree = "<group>"; };
 		F8898A002B95FC7F00F00E7F /* CreatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordView.swift; sourceTree = "<group>"; };
 		F8898A022B95FCC500F00E7F /* CompleteSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpView.swift; sourceTree = "<group>"; };
 		F8898A042B95FD6400F00E7F /* RegisterationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationViewModel.swift; sourceTree = "<group>"; };
 		F8898A062B95FDF600F00E7F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F89491272B9B086200437A2E /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
+		F8D880A32B9F8DD2005D421F /* CreateNicknamePhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNicknamePhoneView.swift; sourceTree = "<group>"; };
+		F8D880A52B9F946A005D421F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F8FFF41C2B923A74001B375B /* Compartz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Compartz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8FFF41F2B923A75001B375B /* CompartzApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompartzApp.swift; sourceTree = "<group>"; };
 		F8FFF4212B923A75001B375B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 				F824B5A72B930DD7005FADB3 /* API.swift */,
 				F824B5A52B930DC9005FADB3 /* API+Extensions.swift */,
 				F824B5AA2B930E35005FADB3 /* NetworkManager.swift */,
+				F8D880A52B9F946A005D421F /* AuthService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -254,8 +259,9 @@
 			children = (
 				F88989DD2B935DB900F00E7F /* LoginView.swift */,
 				F88989FC2B95F99C00F00E7F /* AddEmailView.swift */,
-				F88989FE2B95FAD600F00E7F /* CreateUsernameView.swift */,
+				F88989FE2B95FAD600F00E7F /* CreateNameView.swift */,
 				F8898A002B95FC7F00F00E7F /* CreatePasswordView.swift */,
+				F8D880A32B9F8DD2005D421F /* CreateNicknamePhoneView.swift */,
 				F8898A022B95FCC500F00E7F /* CompleteSignUpView.swift */,
 			);
 			path = Login;
@@ -432,13 +438,15 @@
 				F824B5DA2B932E57005FADB3 /* ProductViewModel.swift in Sources */,
 				F824B5AB2B930E35005FADB3 /* NetworkManager.swift in Sources */,
 				F824B5A82B930DD7005FADB3 /* API.swift in Sources */,
+				F8D880A62B9F946A005D421F /* AuthService.swift in Sources */,
 				F88989DE2B935DB900F00E7F /* LoginView.swift in Sources */,
 				F8898A052B95FD6400F00E7F /* RegisterationViewModel.swift in Sources */,
 				F8898A012B95FC7F00F00E7F /* CreatePasswordView.swift in Sources */,
-				F88989FF2B95FAD600F00E7F /* CreateUsernameView.swift in Sources */,
+				F88989FF2B95FAD600F00E7F /* CreateNameView.swift in Sources */,
 				F88989F22B95970900F00E7F /* OrderViewModel.swift in Sources */,
 				F824B5C32B931F80005FADB3 /* Order.swift in Sources */,
 				F88989FD2B95F99C00F00E7F /* AddEmailView.swift in Sources */,
+				F8D880A42B9F8DD2005D421F /* CreateNicknamePhoneView.swift in Sources */,
 				F88989EE2B95956200F00E7F /* OrderHistoryView.swift in Sources */,
 				F8898A072B95FDF700F00E7F /* LoginViewModel.swift in Sources */,
 				F824B5BD2B931F47005FADB3 /* Product.swift in Sources */,

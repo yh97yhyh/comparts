@@ -1,5 +1,5 @@
 //
-//  CreateUsernameView.swift
+//  CreateNameView.swift
 //  Compartz
 //
 //  Created by 영현 on 3/4/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CreateUsernameView: View {
+struct CreateNameView: View {
     @StateObject var viewModel = RegisterationViewModel.shared
     @Environment(\.dismiss) var dismiss
     
@@ -26,21 +26,23 @@ struct CreateUsernameView: View {
             .padding(.horizontal)
 //            .padding(.bottom)
             
-            Text("닉네임을 입력해 주세요.")
+            Text("이름을 입력해 주세요.")
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.top)
             
-            Text("You'll use this username to sign in to your account")
-                .font(.footnote)
-                .foregroundColor(.gray)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 24)
+//            Text("이름은 로그인하는 데 사용됩니다.")
+//                .font(.footnote)
+//                .foregroundColor(.gray)
+//                .multilineTextAlignment(.center)
+//                .padding(.horizontal, 24)
             
-            TextField("Username", text: $viewModel.username)
+            TextField("Name", text: $viewModel.name)
                 .autocapitalization(.none)
                 .modifier(IGTextFieldModifier())
-            
+                .autocorrectionDisabled()
+                .autocorrectionDisabled()
+
             NavigationLink {
                 CreatePasswordView()
             } label: {
@@ -57,5 +59,5 @@ struct CreateUsernameView: View {
 }
 
 #Preview {
-    CreateUsernameView()
+    CreateNameView()
 }

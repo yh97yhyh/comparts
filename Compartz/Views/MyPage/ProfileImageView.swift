@@ -11,19 +11,24 @@ struct ProfileImageView: View {
     @StateObject var viewModel = MyPageViewModel.shared
     
     var body: some View {
-        if let profile = viewModel.user.profile {
-            Image(profile)
-                .resizable()
-                .scaledToFill()
-                .frame(width: 100, height: 100)
-                .clipShape(Circle())
-        } else {
-            Image(systemName: "person.circle.fill")
-                .resizable()
-                .frame(width: 100, height: 100)
-                .clipShape(Circle())
-                .foregroundColor(Color(.systemGray4))
-        }
+        Image(systemName: "person.circle.fill")
+            .resizable()
+            .frame(width: 100, height: 100)
+            .clipShape(Circle())
+            .foregroundColor(Color(.systemGray4))
+//        if let profile = viewModel.user.profile {
+//            Image(profile)
+//                .resizable()
+//                .scaledToFill()
+//                .frame(width: 100, height: 100)
+//                .clipShape(Circle())
+//        } else {
+//            Image(systemName: "person.circle.fill")
+//                .resizable()
+//                .frame(width: 100, height: 100)
+//                .clipShape(Circle())
+//                .foregroundColor(Color(.systemGray4))
+//        }
     }
 }
 
