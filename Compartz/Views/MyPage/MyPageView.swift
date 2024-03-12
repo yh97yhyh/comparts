@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MyPageView: View {
-    @StateObject var viewModel = MyPageViewModel.shared
+    @StateObject var viewModel: MyPageViewModel
     
     var body: some View {
 //        NavigationView {
@@ -31,16 +31,16 @@ struct MyPageView: View {
                 .padding(.horizontal)
                 .padding(.bottom)
                 
-                ProfileHeaderView()
+                ProfileHeaderView(viewModel: viewModel)
                     .padding(.bottom)
                 
                 HStack {
-                    NavigationLink(destination: OrderHistoryView()) {
+                    NavigationLink(destination: OrderHistoryView(viewModel: viewModel)) {
                         Text("주문내역")
                     }
                     .buttonStyle(MyPageButtonStyle())
                     
-                    NavigationLink(destination: CartView()) {
+                    NavigationLink(destination: CartView(viewModel: viewModel)) {
                         Text("장바구니")
                     }
                     .buttonStyle(MyPageButtonStyle())
@@ -48,7 +48,7 @@ struct MyPageView: View {
                 }
                 .padding(.bottom)
                 
-                SettingView()
+                SettingView(viewModel: viewModel)
             }
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
@@ -74,5 +74,5 @@ struct MyPageButtonStyle: ButtonStyle {
 }
 
 #Preview {
-    MyPageView()
+    MyPageView(viewModel: MyPageViewModel())
 }

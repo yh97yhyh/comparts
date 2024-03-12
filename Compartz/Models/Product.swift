@@ -14,8 +14,8 @@ struct Product: Identifiable, Codable, Hashable {
     var price: Int
     var descriptionImage: String
     var description: String
-    var createdDatetime: String?
-    var categoryId: Int?
+    var createdDatetime: String
+    var categoryId: Int
 }
 
 extension Product {

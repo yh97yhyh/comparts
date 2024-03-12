@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OrderCardView: View {
     @StateObject var viewModel: OrderViewModel
-    
+
     var body: some View {
         VStack {
             HStack {
@@ -39,7 +39,7 @@ struct OrderCardView: View {
                     }
                 }
                 
-                Text("결제금액 : \(viewModel.order.totalPrice) 원")
+                Text("결제금액 : \(viewModel.order.amount) 원")
             }
             .padding()
         }

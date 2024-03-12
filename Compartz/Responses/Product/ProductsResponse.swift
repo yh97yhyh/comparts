@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ProductListResponse: Codable {
+struct ProductsResponse: Codable {
     let content: [ProductResponse]
     let pageable: Pageable
     let last: Bool

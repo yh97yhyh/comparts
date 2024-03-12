@@ -18,7 +18,6 @@ class RegisterationViewModel: ObservableObject {
     @Published var phone = ""
     
     func createUser() {
-//        try await AuthService.shared.createuser(email: email, password: password, username: username)
         let parameters: Parameters = [
             "mail": mail,
             "password": password,
@@ -26,16 +25,8 @@ class RegisterationViewModel: ObservableObject {
             "phone": phone,
             "nickName": nickname
         ]
-        NetworkManager.createUser(parameters: parameters) { result in
-            switch result {
-            case .success:
-                print("Succeed to create user!")
-
-            case .failure:
-                print("Failed to create user..")
-
-            }
-        }
+        
+        AuthManager.shared.registerAndLogin(parameters: parameters)
         
         clear()
     }

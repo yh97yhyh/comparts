@@ -34,7 +34,7 @@ struct LoginView: View {
                 .padding(.bottom)
                 
                 Button {
-                    
+                    viewModel.login()
                 } label: {
                     Text("로그인")
                 }

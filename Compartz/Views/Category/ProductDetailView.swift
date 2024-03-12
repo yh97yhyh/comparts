@@ -65,12 +65,15 @@ struct ProductDetailView: View {
                     .padding(.horizontal)
                     .padding(.bottom, 8)
                 
-                if let productImage = viewModel.product.descriptionImage {
-                    Image(productImage)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .padding(.horizontal)
-                }
+//                if let productImage = viewModel.product.descriptionImage {
+//                    Image(productImage)
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fit)
+//                        .padding(.horizontal)
+                Image(viewModel.product.descriptionImage)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding(.horizontal)
                 
             }
             

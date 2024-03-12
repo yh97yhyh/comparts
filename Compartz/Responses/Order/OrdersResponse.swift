@@ -15,7 +15,7 @@ struct OrderDetailResponse: Codable {
     let details: [OrderItemResponse]
 }
 
-struct OrderResponse: Codable {
+struct OrdersResponse: Codable {
     let content: [OrderDetailResponse]
     let pageable: Pageable
     let last: Bool

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileHeaderView: View {
-    @StateObject var viewModel = MyPageViewModel.shared
+    @StateObject var viewModel: MyPageViewModel
     
     var body: some View {
         VStack {
@@ -16,7 +16,7 @@ struct ProfileHeaderView: View {
                 ProfileImageView()
                 
                 VStack(alignment: .leading) {
-                    Text("\(viewModel.user.nickname) 님")
+                    Text("\(viewModel.user.nickName) 님")
                         .font(.subheadline)
                         .fontWeight(.semibold)
                     Text(viewModel.user.mail)
@@ -32,5 +32,5 @@ struct ProfileHeaderView: View {
 }
 
 #Preview {
-    ProfileHeaderView()
+    ProfileHeaderView(viewModel: MyPageViewModel())
 }

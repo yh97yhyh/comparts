@@ -17,11 +17,11 @@ struct CategoryView: View {
                 Text("컴파츠")
                     .font(.headline)
                 Spacer()
-                NavigationLink(destination: CartView()) {
-                    Image(systemName: "cart.fill")
-                        .imageScale(.large)
-                        .foregroundColor(.black)
-                }
+//                NavigationLink(destination: CartView()) {
+//                    Image(systemName: "cart.fill")
+//                        .imageScale(.large)
+//                        .foregroundColor(.black)
+//                }
             }
             .padding(.horizontal)
             

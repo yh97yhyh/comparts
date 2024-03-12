@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @StateObject var authManager = AuthManager.shared
     @State private var selectedIndex = 0
     
     var body: some View {
@@ -34,7 +35,7 @@ struct MainTabView: View {
                             Text("카테고리")
                         }
                         .tag(1)
-                    MyPageView()
+                    MyPageView(viewModel: getMyPageViewModel())
                         .onAppear {
                             selectedIndex = 2
                         }
@@ -46,6 +47,14 @@ struct MainTabView: View {
                 }
                 .accentColor(.black)
             }
+        }
+    }
+    
+    func getMyPageViewModel() -> MyPageViewModel {
+        if let currentUser = authManager.currentUser {
+            return MyPageViewModel(currentUser)
+        } else {
+            return MyPageViewModel()
         }
     }
                 

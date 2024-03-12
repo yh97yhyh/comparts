@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class LoginViewModel: ObservableObject {
     static let shared = LoginViewModel()
@@ -13,7 +14,19 @@ class LoginViewModel: ObservableObject {
     @Published var mail = ""
     @Published var password = ""
     
-    func SignIn() async throws {
-//        try await AuthService.shared.login(withEmail: email, password: password)
+    func login() {
+        let parameters: Parameters = [
+            "mail": mail,
+            "password": password,
+        ]
+        
+        AuthManager.shared.login(parameters: parameters)
+    
+        clear()
+    }
+    
+    private func clear() {
+        mail = ""
+        password = ""
     }
 }

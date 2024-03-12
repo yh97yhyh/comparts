@@ -9,8 +9,8 @@ import Foundation
 import Alamofire
 
 final class NetworkManager<T: Codable> {
-    static func callAp(parameters: Parameters, completion: @escaping (Result<T, NetworkError>) -> Void) {
-        let url = URL(string: API.baseUrlString + "/auth/signup")!
+    static func callApi(urlString: String, parameters: Parameters, completion: @escaping (Result<T, NetworkError>) -> Void) {
+        let url = URL(string: API.baseUrlString + urlString)!
         let headers: HTTPHeaders = [
             "Content-Type": "application/json"
         ]
@@ -47,10 +47,10 @@ final class NetworkManager<T: Codable> {
             }
     }
     
-    static func callApiWithToken(parameters: Parameters, completion: @escaping (Result<T, NetworkError>) -> Void) {
-        let url = URL(string: API.baseUrlString + "/auth/signup")!
+    static func callApiWithToken(urlString: String, parameters: Parameters, completion: @escaping (Result<T, NetworkError>) -> Void) {
+        let url = URL(string: API.baseUrlString + urlString)!
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(AuthService.shared.accessToken)",
+            "Authorization": "Bearer \(AuthManager.shared.currentUser?.accessToken)",
             "Content-Type": "application/json"
         ]
 

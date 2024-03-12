@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OrderHistoryView: View {
-    @StateObject var viewModel = MyPageViewModel.shared
+    @StateObject var viewModel: MyPageViewModel
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
@@ -59,5 +59,5 @@ struct OrderHistoryView: View {
 }
 
 #Preview {
-    OrderHistoryView()
+    OrderHistoryView(viewModel: MyPageViewModel())
 }

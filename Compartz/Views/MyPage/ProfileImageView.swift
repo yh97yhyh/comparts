@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ProfileImageView: View {
-    @StateObject var viewModel = MyPageViewModel.shared
-    
+
     var body: some View {
         Image(systemName: "person.circle.fill")
             .resizable()

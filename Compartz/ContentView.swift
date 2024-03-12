@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var authManager = AuthManager.shared
     
     var body: some View {
         VStack {
-            MainTabView()
+            if authManager.isLoggedIn {
+                MainTabView()
+            } else {
+                LoginView()
+            }
         }
     }
 }

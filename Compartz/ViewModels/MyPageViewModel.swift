@@ -8,7 +8,7 @@
 import Foundation
 
 class MyPageViewModel: ObservableObject {
-    static let shared = MyPageViewModel()
+//    static let shared = MyPageViewModel()
     
     @Published var user: User
     @Published var orders: [Order]
@@ -16,6 +16,7 @@ class MyPageViewModel: ObservableObject {
     @Published var isCartItemsAllSelected: Bool
     
     init(_ user: User = User.MOCK_USERS[0], _ orders: [Order] = Order.MOCK_ORDERS, _ cartItems: [CartItem] = CartItem.MOCK_CARTITEMS, _ isCartItemsAllSelected: Bool = true) {
+        
         self.user = user
         self.orders = orders
         self.cartItems = cartItems
