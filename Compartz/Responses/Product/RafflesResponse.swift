@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct RafflesResponse: Codable {
+struct Raffle: Codable {
     let id: Int
-    let raffles: [ProductResponse]
+    let product: Product
+}
+
+struct RafflesResponse: Codable {
+    let raffles: [Raffle]
 }

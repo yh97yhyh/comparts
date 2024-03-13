@@ -11,7 +11,6 @@ struct Banner: Identifiable, Codable, Hashable {
     var id: Int
     var name: String
     var image: String
-    var eventId: Int?
 }
 
 extension Banner {

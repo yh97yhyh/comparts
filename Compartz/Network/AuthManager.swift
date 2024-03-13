@@ -24,7 +24,7 @@ class AuthManager: ObservableObject {
     }
 
     func login(parameters: Parameters) {
-        NetworkManager<User>.callApi(urlString: "/auth/login", parameters: parameters) { result in
+        NetworkManager<User>.callPostWithoutToken(urlString: "/auth/login", parameters: parameters) { result in
             switch result {
             case .success(let user):
                 self.saveuser(user)
@@ -48,7 +48,7 @@ class AuthManager: ObservableObject {
     }
 
     func registerAndLogin(parameters: Parameters) {
-        NetworkManager<User>.callApi(urlString: "/auth/signup", parameters: parameters) { result in
+        NetworkManager<User>.callPostWithoutToken(urlString: "/auth/signup", parameters: parameters) { result in
             switch result {
             case .success(let user):
                 let loginParameters: Parameters = [

@@ -18,15 +18,15 @@ struct MyPageView: View {
                         .font(.headline)
                     Spacer()
                     
-                    Button {
-                        // cart
-                    } label: {
-                        Image(systemName: "cart.fill")
-                            .imageScale(.large)
-                            .foregroundColor(.black)
-                    }
-                    .disabled(true)
-                    .opacity(0.0)
+//                    Button {
+//                        // cart
+//                    } label: {
+//                        Image(systemName: "cart.fill")
+//                            .imageScale(.large)
+//                            .foregroundColor(.black)
+//                    }
+//                    .disabled(true)
+//                    .opacity(0.0)
                 }
                 .padding(.horizontal)
                 .padding(.bottom)

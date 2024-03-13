@@ -23,15 +23,16 @@ struct ProductDetailView: View {
                         .foregroundColor(.black)
                 }
                 Spacer()
-                Button {
-                    // cart
-                } label: {
-                    Image(systemName: "cart.fill")
-                        .imageScale(.large)
-                        .foregroundColor(.black)
-                }
-                .disabled(true)
-                .opacity(0.0)
+//                Text(viewModel.product.categoryId)
+//                Button {
+//                    // cart
+//                } label: {
+//                    Image(systemName: "cart.fill")
+//                        .imageScale(.large)
+//                        .foregroundColor(.black)
+//                }
+//                .disabled(true)
+//                .opacity(0.0)
             }
             .padding(.horizontal)
             
@@ -59,11 +60,11 @@ struct ProductDetailView: View {
                 
                 Divider()
                 
-                Text(viewModel.product.description)
-                    .font(.footnote)
-                    .foregroundColor(.gray)
-                    .padding(.horizontal)
-                    .padding(.bottom, 8)
+//                Text(viewModel.product.description)
+//                    .font(.footnote)
+//                    .foregroundColor(.gray)
+//                    .padding(.horizontal)
+//                    .padding(.bottom, 8)
                 
 //                if let productImage = viewModel.product.descriptionImage {
 //                    Image(productImage)

@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct CategoryResponse: Codable {
-    let id: Int
-    let name: String
-    let sortOrder: Int
-}
+//struct CategoryResponse: Codable {
+//    let id: Int
+//    let name: String
+//    let sortOrder: Int
+//}
 
 struct CategoriesResponse: Codable {
-    let categories: [CategoryResponse]
+    let categories: [Category]
 }

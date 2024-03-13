@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 final class NetworkManager<T: Codable> {
-    static func callApi(urlString: String, parameters: Parameters, completion: @escaping (Result<T, NetworkError>) -> Void) {
+    static func callPostWithoutToken(urlString: String, parameters: Parameters, completion: @escaping (Result<T, NetworkError>) -> Void) {
         let url = URL(string: API.baseUrlString + urlString)!
         let headers: HTTPHeaders = [
             "Content-Type": "application/json"
@@ -47,10 +47,10 @@ final class NetworkManager<T: Codable> {
             }
     }
     
-    static func callApiWithToken(urlString: String, parameters: Parameters, completion: @escaping (Result<T, NetworkError>) -> Void) {
+    static func callPost(urlString: String, parameters: Parameters = Parameters(), completion: @escaping (Result<T, NetworkError>) -> Void) {
         let url = URL(string: API.baseUrlString + urlString)!
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(AuthManager.shared.currentUser?.accessToken)",
+            "Authorization": "Bearer \(AuthManager.shared.currentUser!.accessToken)",
             "Content-Type": "application/json"
         ]
 
@@ -85,6 +85,45 @@ final class NetworkManager<T: Codable> {
                 }
             }
     }
+    
+    static func callGet(urlString: String, completion: @escaping (Result<T, NetworkError>) -> Void) {
+        let url = URL(string: API.baseUrlString + urlString)!
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(AuthManager.shared.currentUser!.accessToken)"
+        ]
+
+        AF.request(url, method: .get, headers: headers)
+            .validate()
+            .response { response in
+                switch response.result {
+                case .success(let data):
+                    guard let data = data else {
+                        completion(.failure(.invalidData))
+                        return
+                    }
+                    
+                    do {
+                        let json = try JSONDecoder().decode(T.self, from: data)
+                        completion(.success(json))
+                    } catch let err {
+                        print(String(describing: err))
+                        completion(.failure(.decodingError(err: err.localizedDescription)))
+                    }
+                    
+                case .failure(let error):
+                    if let statusCode = response.response?.statusCode {
+                        if statusCode == 401 {
+                            completion(.failure(.error(err: "Unauthorized")))
+                        } else {
+                            completion(.failure(.error(err: "Status code: \(statusCode)")))
+                        }
+                    } else {
+                        completion(.failure(.error(err: error.localizedDescription)))
+                    }
+                }
+            }
+    }
+
     
 }
 

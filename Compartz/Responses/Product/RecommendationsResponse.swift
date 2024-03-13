@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct RecommendationItemResponse: Codable {
+struct Recommendation: Codable {
     let id: Int
-    let product: ProductResponse
+    let product: Product
 }
 
-struct RecommendationItemsResponse: Codable {
-    let recommendations: [RecommendationItemResponse]
+struct RecommendationsResponse: Codable {
+    let recommendations: [Recommendation]
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct BannerView: View {
     @StateObject var viewModel = HomeViewModel.shared
@@ -14,9 +15,13 @@ struct BannerView: View {
     var body: some View {
         TabView(selection: $currentIndex) {
             ForEach(0..<viewModel.banners.count, id: \.self) { index in
-                Image(viewModel.banners[index].image)
+//                Image(viewModel.banners[index].image)
+//                    .resizable()
+//                    .scaledToFill()
+//                    .tag(index)
+                KFImage(URL(string: "http://localhost:8080/images/\(viewModel.banners[index].image)"))
                     .resizable()
-                    .scaledToFill()
+                    .scaleEffect()
                     .tag(index)
             }
         }
