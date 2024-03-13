@@ -44,14 +44,14 @@ struct ProductOrderView: View {
             
             HStack {
                 Button {
-                    
+                    myPageViewModel.order(orders: [OrderOrderItem(productId: viewModel.product.id, count: orderCount)])
+                    dismiss()
                 } label: {
                     Text("결제하기")
                 }
                 .buttonStyle(MyPageButtonStyle())
                 Button {
                     myPageViewModel.saveCart(productId: viewModel.product.id, count: orderCount)
-//                    myPageViewModel.addCartItem(newCartItem: CartItem(id: UUID().hashValue, product: viewModel.product, count: orderCount, selected: true))
                     dismiss()
                 } label: {
                     Text("장바구니")

@@ -24,7 +24,9 @@ struct ProductDetailView: View {
                         .foregroundColor(.black)
                 }
                 Spacer()
-//                Text(viewModel.product.categoryId)
+                Text("상품")
+                    .font(.headline)
+                Spacer()
 //                Button {
 //                    // cart
 //                } label: {

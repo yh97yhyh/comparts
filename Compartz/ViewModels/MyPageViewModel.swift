@@ -113,6 +113,33 @@ class MyPageViewModel: ObservableObject {
         }
     }
     
+    func order(orders: [OrderOrderItem], cartItemIds: [Int] = []) {
+        var parameters: Parameters = [:]
+        if cartItemIds.isEmpty {
+            parameters = [
+                "userId" : "\(user.id)",
+                "items" : orders.map { $0.toDictionary() },
+            ]
+        } else {
+            parameters = [
+                "userId" : "\(user.id)",
+                "items" : orders.map { $0.toDictionary() },
+                "cartItemIds" : cartItemIds
+            ]
+        }
+        
+        NetworkManager<OrderDetailResponse>.callPost(urlString: "/orders", parameters: parameters) { result in
+            switch result {
+            case .success(let orderDetailResponse):
+                print("succeed to order! \(orderDetailResponse)")
+                self.fetchCarts()
+                self.fetchOrders()
+            case .failure(let error):
+                print("failed to order.. \(error.localizedDescription)")
+            }
+        }
+    }
+    
 //    func addOrder(newOrder: Order) {
 //        orders.append(newOrder)
 //    }
