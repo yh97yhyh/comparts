@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ProductDetailView: View {
     @StateObject var viewModel: ProductViewModel
@@ -37,7 +38,13 @@ struct ProductDetailView: View {
             .padding(.horizontal)
             
             ScrollView {
-                Image(viewModel.product.image)
+//                Image(viewModel.product.image)
+//                    .resizable()
+//                    .scaledToFill()
+//                    .clipped()
+//                    .frame(width: 250, height: 250)
+//                    .padding(.horizontal)
+                KFImage(URL(string: "http://localhost:8080/images/\(viewModel.product.image)"))
                     .resizable()
                     .scaledToFill()
                     .clipped()
@@ -60,18 +67,22 @@ struct ProductDetailView: View {
                 
                 Divider()
                 
-//                Text(viewModel.product.description)
-//                    .font(.footnote)
-//                    .foregroundColor(.gray)
-//                    .padding(.horizontal)
-//                    .padding(.bottom, 8)
+                Text(viewModel.product.description)
+                    .font(.footnote)
+                    .foregroundColor(.gray)
+                    .padding(.horizontal)
+                    .padding(.bottom, 16)
                 
 //                if let productImage = viewModel.product.descriptionImage {
 //                    Image(productImage)
 //                        .resizable()
 //                        .aspectRatio(contentMode: .fit)
 //                        .padding(.horizontal)
-                Image(viewModel.product.descriptionImage)
+//                Image(viewModel.product.descriptionImage)
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .padding(.horizontal)
+                KFImage(URL(string: "http://localhost:8080/images/\(viewModel.product.descriptionImage)"))
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding(.horizontal)
@@ -114,7 +125,7 @@ struct ProductButtonStyle: ButtonStyle {
                 .fontWeight(.semibold)
                 .frame(width: width, height: height)
                 .frame(maxWidth: .infinity)
-                .background(.gray)
+                .background(.black)
                 .foregroundColor(.white)
                 .overlay(
                     Rectangle()
@@ -126,7 +137,7 @@ struct ProductButtonStyle: ButtonStyle {
                 .font(.subheadline)
                 .fontWeight(.semibold)
                 .frame(width: width, height: height)
-                .background(.gray)
+                .background(.black)
                 .foregroundColor(.white)
                 .cornerRadius(6)
                 .overlay(

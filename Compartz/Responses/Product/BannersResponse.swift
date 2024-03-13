@@ -13,6 +13,6 @@ import Foundation
 //    let image: String
 //}
 
-struct BannersResponse: Codable {
-    let baners: [Banner]
-}
+//struct BannersResponse: Codable {
+//    let baners: [Banner]
+//}

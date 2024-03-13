@@ -13,7 +13,7 @@ class HomeViewModel: ObservableObject {
     @Published var banners: [Banner]
     @Published var raffleProduct: Product
     @Published var recommendations: [Product]
-    @Published var isFetching = false
+    @Published var isFetching = true
     private var fetchCount = 0
 
     init(_ banners: [Banner] = Banner.MOCK_BANNERS, _ raffleProduct: Product = Product.MOCK_PRODUCT_2, _ recommendations: [Product] = [Product.MOCK_PRODUCT_0, Product.MOCK_PRODUCT_1, Product.MOCK_PRODUCT_2]) {
@@ -67,7 +67,7 @@ class HomeViewModel: ObservableObject {
     
     func toggleFetch() {
         self.fetchCount += 1
-        print("homeviewmodel fetchcount : \(fetchCount)")
+//        print("homeviewmodel fetchcount : \(fetchCount)")
         if self.fetchCount >= 3 {
             self.isFetching = false
             self.fetchCount = 0

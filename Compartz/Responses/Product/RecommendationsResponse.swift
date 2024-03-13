@@ -12,6 +12,6 @@ struct Recommendation: Codable {
     let product: Product
 }
 
-struct RecommendationsResponse: Codable {
-    let recommendations: [Recommendation]
-}
+//struct RecommendationsResponse: Codable {
+//    let recommendations: [Recommendation]
+//}

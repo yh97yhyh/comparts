@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct ProductResponse: Codable {
-    let id: Int
-    let name: String
-    let image: String
-    let price: Int
-    let descriptionImage: String
-    let createdDatetime: String
-    let categoryId: String
-}
+//struct ProductResponse: Codable {
+//    let id: Int
+//    let name: String
+//    let image: String
+//    let price: Int
+//    let descriptionImage: String
+//    let createdDatetime: String
+//    let categoryId: String
+//}

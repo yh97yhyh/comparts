@@ -12,6 +12,6 @@ struct Raffle: Codable {
     let product: Product
 }
 
-struct RafflesResponse: Codable {
-    let raffles: [Raffle]
-}
+//struct RafflesResponse: Codable {
+//    let raffles: [Raffle]
+//}

@@ -86,13 +86,13 @@ final class NetworkManager<T: Codable> {
             }
     }
     
-    static func callGet(urlString: String, completion: @escaping (Result<T, NetworkError>) -> Void) {
+    static func callGet(urlString: String, parameters: Parameters = Parameters(), completion: @escaping (Result<T, NetworkError>) -> Void) {
         let url = URL(string: API.baseUrlString + urlString)!
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(AuthManager.shared.currentUser!.accessToken)"
         ]
 
-        AF.request(url, method: .get, headers: headers)
+        AF.request(url, method: .get, parameters: parameters, headers: headers)
             .validate()
             .response { response in
                 switch response.result {

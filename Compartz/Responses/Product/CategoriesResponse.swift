@@ -13,6 +13,6 @@ import Foundation
 //    let sortOrder: Int
 //}
 
-struct CategoriesResponse: Codable {
-    let categories: [Category]
-}
+//struct CategoriesResponse: Codable {
+//    let categories: [Category]
+//}

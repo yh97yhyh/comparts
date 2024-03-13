@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CategoryView: View {
     @StateObject var viewModel = CategoryViewModel.shared
-    @State private var selectedCategory: Int = 0
+//    @State private var selectedCategory: Int = 0
     
     var body: some View {
         VStack {
@@ -25,54 +25,62 @@ struct CategoryView: View {
             }
             .padding(.horizontal)
             
-            ScrollViewReader { scrollProxy in
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 20) {
+            if viewModel.isFetching {
+                ProgressView("")
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .foregroundColor(.white)
+                    .background(Color.clear)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else {
+                ScrollViewReader { scrollProxy in
+                    ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 20) {
-                            Button("전체") {
-                                withAnimation {
-                                    selectedCategory = 0
-                                    scrollProxy.scrollTo(0, anchor: .center)
-                                }
-                            }
-                            .buttonStyle(CategoryButtonStyle(isSelected: selectedCategory == 0))
-                            .id(0)
-                            ForEach(viewModel.categories, id: \.self) { category in
-                                Button(category.name) {
+                            HStack(spacing: 20) {
+                                Button("전체") {
                                     withAnimation {
-                                        selectedCategory = category.id
-                                        scrollProxy.scrollTo(selectedCategory, anchor: .center)
+                                        viewModel.selectedCategory = 0
+                                        scrollProxy.scrollTo(0, anchor: .center)
                                     }
                                 }
-                                .buttonStyle(CategoryButtonStyle(isSelected: selectedCategory == category.id))
-                                .id(category.id)
+                                .buttonStyle(CategoryButtonStyle(isSelected: viewModel.selectedCategory == 0))
+                                .id(0)
+                                ForEach(viewModel.categories, id: \.self) { category in
+                                    Button(category.name) {
+                                        withAnimation {
+                                            viewModel.selectedCategory = category.id
+                                            scrollProxy.scrollTo(viewModel.selectedCategory, anchor: .center)
+                                        }
+                                    }
+                                    .buttonStyle(CategoryButtonStyle(isSelected: viewModel.selectedCategory == category.id))
+                                    .id(category.id)
+                                }
                             }
+                            
                         }
-                        
+                        .padding()
                     }
-                    .padding()
-                }
-                .onChange(of: selectedCategory) { newCategory in
-                    let scrollToCategoryID = newCategory == 0 ? 0 : viewModel.categories[newCategory - 1].id
-                    scrollProxy.scrollTo(scrollToCategoryID, anchor: .center)
-                }
-            }
-            
-            Divider()
-                .padding(.bottom)
-            
-            TabView(selection: $selectedCategory) {
-                ForEach(0...viewModel.categories.count, id: \.self) { index in
-                    if index == 0 {
-                        ProductsView(selectedCategory: $selectedCategory)
-                            .tag(0)
-                    } else {
-                        ProductsView(selectedCategory: $selectedCategory)
-                            .tag(viewModel.categories[index-1].id)
+                    .onChange(of: viewModel.selectedCategory) { newCategory in
+                        let scrollToCategoryID = newCategory == 0 ? 0 : viewModel.categories[newCategory - 1].id
+                        scrollProxy.scrollTo(scrollToCategoryID, anchor: .center)
                     }
                 }
+                
+                Divider()
+                    .padding(.bottom)
+                
+                TabView(selection: $viewModel.selectedCategory) {
+                    ForEach(0...viewModel.categories.count, id: \.self) { index in
+                        if index == 0 {
+                            ProductsView(selectedCategory: $viewModel.selectedCategory)
+                                .tag(0)
+                        } else {
+                            ProductsView(selectedCategory: $viewModel.selectedCategory)
+                                .tag(viewModel.categories[index-1].id)
+                        }
+                    }
+                }
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             }
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)

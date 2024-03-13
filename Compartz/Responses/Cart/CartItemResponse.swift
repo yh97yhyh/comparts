@@ -10,5 +10,5 @@ import Foundation
 struct CartItemResponse: Codable {
     let id: Int
     let count: Int
-    let product: ProductResponse
+    let product: Product
 }
