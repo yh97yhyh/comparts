@@ -31,18 +31,19 @@ struct AddEmailView: View {
                 .fontWeight(.bold)
                 .padding(.top)
             
-            Text("You'll use this email to sign in to your account")
+            Text("이메일은 로그인하는 데 사용됩니다.")
                 .font(.footnote)
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
             
-            TextField("Email", text: $viewModel.email)
+            TextField("Email", text: $viewModel.mail)
                 .autocapitalization(.none)
                 .modifier(IGTextFieldModifier())
+                .autocorrectionDisabled()
             
             NavigationLink {
-                CreateUsernameView()
+                CreateNameView()
             } label: {
                 Text("다음")
             }

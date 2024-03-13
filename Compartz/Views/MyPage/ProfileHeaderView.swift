@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct ProfileHeaderView: View {
-    @StateObject var viewModel = MyPageViewModel.shared
-    
+    @EnvironmentObject var viewModel: MyPageViewModel
+
     var body: some View {
         VStack {
             HStack {
                 ProfileImageView()
                 
                 VStack(alignment: .leading) {
-                    Text("\(viewModel.user.nickname) 님")
+                    Text("\(viewModel.user.nickName) 님")
                         .font(.subheadline)
                         .fontWeight(.semibold)
-                    Text(viewModel.user.userId)
+                    Text(viewModel.user.mail)
                         .font(.footnote)
                     Text(viewModel.user.phone)
                         .font(.footnote)

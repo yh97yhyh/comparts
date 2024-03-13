@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State var id: String = ""
-    @State var password: String = ""
+    @StateObject var viewModel = LoginViewModel.shared
     
     var body: some View {
         NavigationView {
@@ -21,36 +20,39 @@ struct LoginView: View {
                     .fontWeight(.semibold)
                 
                 VStack {
-                    TextField("Enter your email", text: $id)
+                    TextField("이메일을 입력해주세요.", text: $viewModel.mail)
                         .autocapitalization(.none)
                         .modifier(IGTextFieldModifier())
+                        .autocorrectionDisabled()
                     
-                    SecureField("Enter your password", text: $password)
+                    SecureField("비밀번호를 입력해주세요.", text: $viewModel.password)
                         .autocapitalization(.none)
                         .modifier(IGTextFieldModifier())
+                        .autocorrectionDisabled()
+
                 }
                 .padding(.bottom)
                 
                 Button {
-                    
+                    viewModel.login()
                 } label: {
                     Text("로그인")
                 }
                 .buttonStyle(ProductButtonStyle(width: 350, height: 44))
                 .padding(.bottom)
                 
-                HStack {
-                    Rectangle()
-                        .frame(width: UIScreen.main.bounds.width / 2 - 40, height: 0.5)
-                    
-                    Text("OR")
-                        .font(.footnote)
-                        .fontWeight(.semibold)
-                    
-                    Rectangle()
-                        .frame(width: UIScreen.main.bounds.width / 2 - 40, height: 0.5)
-                }
-                .foregroundColor(.gray)
+//                HStack {
+//                    Rectangle()
+//                        .frame(width: UIScreen.main.bounds.width / 2 - 40, height: 0.5)
+//                    
+//                    Text("OR")
+//                        .font(.footnote)
+//                        .fontWeight(.semibold)
+//                    
+//                    Rectangle()
+//                        .frame(width: UIScreen.main.bounds.width / 2 - 40, height: 0.5)
+//                }
+//                .foregroundColor(.gray)
                 
                 Spacer()
                 Divider()

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CartView: View {
-    @StateObject var viewModel = MyPageViewModel.shared
+    @EnvironmentObject var viewModel: MyPageViewModel
     @Environment(\.dismiss) private var dismiss
     
     var allItemsSelected: Bool {
@@ -88,7 +88,7 @@ struct CartView: View {
             }
             
             Button {
-                print("click")
+                order()
             } label: {
                 Text("총 \(totalPrice)원 결제하기")
             }
@@ -98,6 +98,19 @@ struct CartView: View {
         .edgesIgnoringSafeArea(.bottom)
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
+    }
+    
+    private func order() {
+        var orders: [OrderOrderItem] = []
+        var cartItemIds: [Int] = []
+        
+        for cartItem in viewModel.cartItems {
+            if cartItem.selected {
+                orders.append(OrderOrderItem(productId: cartItem.product.id, count: cartItem.count))
+                cartItemIds.append(cartItem.id)
+            }
+        }
+        viewModel.order(orders: orders, cartItemIds: cartItemIds)
     }
 }
 

@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ProductOrderView: View {
-    @StateObject var myPageViewModel = MyPageViewModel.shared
     @StateObject var viewModel: ProductViewModel
+    @EnvironmentObject var myPageViewModel: MyPageViewModel
+    
     @State var orderCount = 1
     @Environment(\.dismiss) private var dismiss
     
@@ -43,13 +44,14 @@ struct ProductOrderView: View {
             
             HStack {
                 Button {
-                    
+                    myPageViewModel.order(orders: [OrderOrderItem(productId: viewModel.product.id, count: orderCount)])
+                    dismiss()
                 } label: {
                     Text("결제하기")
                 }
                 .buttonStyle(MyPageButtonStyle())
                 Button {
-                    myPageViewModel.addCartItem(newCartItem: CartItem(id: UUID().hashValue, product: viewModel.product, count: orderCount, selected: true))
+                    myPageViewModel.saveCart(productId: viewModel.product.id, count: orderCount)
                     dismiss()
                 } label: {
                     Text("장바구니")

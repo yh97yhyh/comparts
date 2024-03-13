@@ -7,6 +7,7 @@ target 'Compartz' do
 
   # Pods for Compartz
   pod 'Alamofire'
+  pod 'Kingfisher', '~> 7.0'
   # pod 'lottie-ios'
 
 end

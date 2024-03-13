@@ -20,13 +20,13 @@ struct CompleteSignUpView: View {
                 .fontWeight(.bold)
                 .padding(.top)
             
-            Text("Click below to complete registeration and start using Instagram")
+            Text("회원가입 버튼을 누른 후 컴파츠 앱을 시작하세요!")
                 .font(.footnote)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
             
             Button {
-//                Task { try await viewModel.createUser() }
+                viewModel.createUser()
             } label: {
                 Text("회원가입 완료")
             }

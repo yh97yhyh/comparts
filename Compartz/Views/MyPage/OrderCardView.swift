@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OrderCardView: View {
     @StateObject var viewModel: OrderViewModel
-    
+
     var body: some View {
         VStack {
             HStack {
@@ -22,24 +22,27 @@ struct OrderCardView: View {
             .padding(.top)
             
             VStack(alignment: .leading) {
-                ForEach(viewModel.order.products, id:\.self) { product in
+                ForEach(viewModel.order.orderItems, id:\.self) { orderItem in
                     HStack {
-                        ProductCardView(viewModel: ProductViewModel(product))
+                        ProductCardView(viewModel: ProductViewModel(orderItem.product))
                             .frame(width: 150, height: nil)
                         
                         Spacer()
                         
                         VStack(alignment: .leading) {
-                            Text(product.name)
+                            Text(orderItem.product.name)
                                 .font(.caption)
                                 .fontWeight(.semibold)
-                            Text("\(product.price) 원")
+                            Text("\(orderItem.product.price) 원")
                                 .font(.footnote)
+                            Text("\(orderItem.count) 개")
+                                .font(.footnote)
+
                         }
                     }
                 }
                 
-                Text("결제금액 : \(viewModel.order.totalPrice) 원")
+                Text("결제금액 : \(viewModel.order.amount) 원")
             }
             .padding()
         }

@@ -31,7 +31,7 @@ struct CreatePasswordView: View {
                 .fontWeight(.bold)
                 .padding(.top)
             
-            Text("Your password must be at least 6 characters in length")
+            Text("비밀번호는 로그인하는 데 사용됩니다.")
                 .font(.footnote)
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
@@ -40,9 +40,10 @@ struct CreatePasswordView: View {
             SecureField("Password", text: $viewModel.password)
                 .autocapitalization(.none)
                 .modifier(IGTextFieldModifier())
-            
+                .autocorrectionDisabled()
+
             NavigationLink {
-                CompleteSignUpView()
+                CreateNicknamePhoneView()
             } label: {
                 Text("다음")
             }
