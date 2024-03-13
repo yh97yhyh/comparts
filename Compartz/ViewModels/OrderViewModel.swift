@@ -10,7 +10,7 @@ import Foundation
 class OrderViewModel: ObservableObject {
     @Published var order: Order
     
-    init(_ order: Order = Order.MOCK_ORDER) {
+    init(_ order: Order = Order.MOCK_ORDER_1) {
         self.order = order
     }
 }

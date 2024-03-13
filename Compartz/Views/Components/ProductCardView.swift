@@ -6,13 +6,18 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ProductCardView: View {
     @StateObject var viewModel: ProductViewModel
     
     var body: some View {
         VStack {
-            Image(viewModel.product.image)
+//            Image(viewModel.product.image)
+//                .resizable()
+//                .scaledToFill()
+//                .clipped()
+            KFImage(URL(string: "http://localhost:8080/images/\(viewModel.product.image)"))
                 .resizable()
                 .scaledToFill()
                 .clipped()

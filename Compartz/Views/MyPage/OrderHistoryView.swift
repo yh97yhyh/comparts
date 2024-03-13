@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OrderHistoryView: View {
-    @StateObject var viewModel = MyPageViewModel.shared
+    @EnvironmentObject var viewModel: MyPageViewModel
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
@@ -38,6 +38,9 @@ struct OrderHistoryView: View {
                 }
                 .padding()
                 
+//                Rectangle()
+//                    .fill(Color(UIColor.lightGray))
+//                    .frame(width: nil, height: 8)
                 Divider()
                 
                 VStack {
@@ -47,6 +50,7 @@ struct OrderHistoryView: View {
 //                    }
                     ForEach(viewModel.orders, id:\.self) { order in
                         OrderCardView(viewModel: OrderViewModel(order))
+                        
                         Divider()
                     }
                 }

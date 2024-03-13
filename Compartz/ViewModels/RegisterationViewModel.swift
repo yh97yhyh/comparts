@@ -6,20 +6,37 @@
 //
 
 import Foundation
+import Alamofire
 
 class RegisterationViewModel: ObservableObject {
     static let shared = RegisterationViewModel()
     
-    @Published var email = ""
-    @Published var username = ""
+    @Published var mail = ""
+    @Published var name = ""
     @Published var password = ""
+    @Published var nickname = ""
+    @Published var phone = ""
     
-    func createUser() async throws {
-//        try await AuthService.shared.createuser(email: email, password: password, username: username)
+    func createUser() {
+        let parameters: Parameters = [
+            "mail": mail,
+            "password": password,
+            "name": name,
+            "phone": phone,
+            "nickName": nickname
+        ]
         
-        email = ""
-        username = ""
-        password = ""
+        AuthManager.shared.registerAndLogin(parameters: parameters)
+        
+        clear()
     }
     
+    
+    private func clear() {
+        mail = ""
+        name = ""
+        password = ""
+        nickname = ""
+        phone = ""
+    }
 }

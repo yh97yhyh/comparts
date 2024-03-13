@@ -8,15 +8,27 @@
 import SwiftUI
 
 struct SettingView: View {
-    @StateObject var viewModel = MyPageViewModel.shared
+    @EnvironmentObject var authManager: AuthManager
+    @EnvironmentObject var viewModel: MyPageViewModel
 
     var body: some View {
         VStack {
             List {
-                NavigationLink(destination: LoginView()) {
-                    Text("로그아웃")
-                        .foregroundColor(.black)
+                Button {
+                    authManager.logout()
+                } label: {
+                    HStack {
+                        Text("로그아웃")
+                            .foregroundColor(.black)
+                        Spacer()
+                        Image(systemName: "chevron.forward")
+                            .foregroundColor(.black)
+                    }
                 }
+//                NavigationLink(destination: LoginView()) {
+//                    Text("로그아웃")
+//                        .foregroundColor(.black)
+//                }
             }
         }
     }

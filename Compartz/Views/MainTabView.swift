@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @EnvironmentObject var authManager: AuthManager
+    @EnvironmentObject var myPageViewModel: MyPageViewModel
     @State private var selectedIndex = 0
     
     var body: some View {
