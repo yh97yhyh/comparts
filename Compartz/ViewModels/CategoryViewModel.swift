@@ -16,18 +16,21 @@ class CategoryViewModel: ObservableObject {
         didSet {
             page = 1
             isCanAddProducts = true
+            fetchProducts()
         }
     }
     @Published var products: [Product]
-    @Published var isFetching = true
     @Published var isCanAddProducts = true
+    @Published var totalCount = 0
     private var fetchCount = 0
     private var page = 1
-    private var totalPages = 2
+    private var totalPages = 0
+    
+    @Published var isFetching = true
     
     init(_ categories: [Category] = Category.MOCK_CATEGORIES, _ products: [Product] = Product.MOCK_PRODUCTS) {
-        self.categories = categories
-        self.products = products
+        self.categories = []
+        self.products = []
         
         fetchCategories()
         fetchProducts()
@@ -47,12 +50,18 @@ class CategoryViewModel: ObservableObject {
     }
     
     func fetchProducts() {
-        NetworkManager<ProductsResponse>.callGet(urlString: "/products") { result in
+        var parameters = Parameters()
+        if selectedCategory != 0 {
+            parameters = [
+                "categoryId": selectedCategory
+            ]
+        }
+        NetworkManager<ProductsResponse>.callGet(urlString: "/products", parameters: parameters) { result in
             switch result {
             case .success(let productsResponse):
                 self.products = productsResponse.content
                 self.totalPages = productsResponse.totalPages
-                self.toggleFetch()
+                self.totalCount = productsResponse.totalElements
                 print("succeed to get products!")
             case .failure(let error):
                 print("failed to get products.. \(error.localizedDescription)")
@@ -64,9 +73,19 @@ class CategoryViewModel: ObservableObject {
         if !isCanAddProducts {
             return
         }
-        let parameters: Parameters = [
-            "page": page
-        ]
+        
+        var parameters = Parameters()
+        if selectedCategory != 0 {
+            parameters  = [
+                "page": page,
+                "categoryId": selectedCategory
+            ]
+        } else {
+            parameters = [
+                "page": page
+            ]
+        }
+        
         NetworkManager<ProductsResponse>.callGet(urlString: "/products", parameters: parameters) { result in
             switch result {
             case .success(let productsResponse):
@@ -83,7 +102,7 @@ class CategoryViewModel: ObservableObject {
     func toggleFetch() {
         self.fetchCount += 1
 //        print("categoryviewmodel fetchcount : \(fetchCount)")
-        if self.fetchCount >= 2 {
+        if self.fetchCount >= 1 {
             self.isFetching = false
             self.fetchCount = 0
         }

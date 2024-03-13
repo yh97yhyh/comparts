@@ -23,7 +23,7 @@ struct ProductsView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("총 \(viewModel.products.count)개")
+                Text("총 \(viewModel.totalCount)개")
                     .font(.subheadline)
                 Spacer()
                 Button("신상품순") {
@@ -46,9 +46,7 @@ struct ProductsView: View {
                     Color.clear
                         .frame(width: 0, height: 0, alignment: .bottom)
                         .onAppear {
-                            if viewModel.isCanAddProducts {
-                                isEndReached = true
-                            }
+                            isEndReached = true
                         }
                 }
                 .padding()
