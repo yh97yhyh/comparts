@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class MyPageViewModel: ObservableObject {
 //    static let shared = MyPageViewModel()
@@ -54,6 +55,60 @@ class MyPageViewModel: ObservableObject {
                 print("succeed to get orders!")
             case .failure(let error):
                 print("failed to get orders.. \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func saveCart(productId: Int, count: Int) {
+//        DispatchQueue.global().async {
+            let parameters: Parameters = [
+                "userId" : "\(self.user.id)",
+                "productId" : "\(productId)",
+                "count": "\(count)"
+            ]
+            NetworkManager<CartItemResponse>.callPost(urlString: "/carts", parameters: parameters) { result in
+                switch result {
+                case .success(let cartItem):
+                    print("succeed to save cart! \(cartItem)")
+                    self.fetchCarts()
+                case .failure(let error):
+                    print("failed to save cart.. \(error.localizedDescription)")
+                }
+            }
+//        }
+    }
+    
+    func updateCart(cartItemId: Int, count: Int) {
+        DispatchQueue.global().async {
+            let parameters: Parameters = [
+                "cartItemId" : "\(cartItemId)",
+                "count": "\(count)"
+            ]
+            NetworkManager<CartItemResponse>.callPut(urlString: "/carts", parameters: parameters) { result in
+                switch result {
+                case .success(let cartItem):
+                    print("succeed to update cart! \(cartItem)")
+                    self.fetchCarts()
+                case .failure(let error):
+                    print("failed to update cart.. \(error.localizedDescription)")
+                }
+            }
+        }
+    }
+    
+    func removeCart(cartItemId: Int) {
+        DispatchQueue.global().async {
+            let parameters: Parameters = [
+                "cartItemId" : "\(cartItemId)"
+            ]
+            NetworkManager<CartItemResponse>.callDelete(urlString: "/carts", parameters: parameters) { result in
+                switch result {
+                case .success():
+                    print("succeed to remove cart!")
+                    self.fetchCarts()
+                case .failure(let error):
+                    print("failed to remove cart.. \(error.localizedDescription)")
+                }
             }
         }
     }

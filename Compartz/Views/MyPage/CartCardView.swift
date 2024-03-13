@@ -21,6 +21,7 @@ struct CartCardView: View {
                 Spacer()
                 Button {
                     print("\(index)")
+                    myPageViewModel.removeCart(cartItemId: viewModel.cart.id)
 //                    myPageViewModel.removeCartItem(at: index)
 //                    myPageViewModel.removeCartItem(id: viewModel.cart.id)
                 } label: {
@@ -52,6 +53,7 @@ struct CartCardView: View {
                     HStack {
                         Button {
                             count += 1
+                            myPageViewModel.updateCart(cartItemId: viewModel.cart.id, count: count)
                         } label: {
                             Image(systemName: "plus")
                                 .foregroundColor(.gray)
@@ -59,11 +61,12 @@ struct CartCardView: View {
                         Text("\(count)")
                             .font(.headline)
                         Button {
-                            if count > 0 {
+                            if count > 1 {
                                 count -= 1
-                                if count == 0 {
-                                    isSelected = false
-                                }
+                                myPageViewModel.updateCart(cartItemId: viewModel.cart.id, count: count)
+//                                if count == 0 {
+//                                    isSelected = false
+//                                }
                             }
                         } label: {
                             Image(systemName: "minus")

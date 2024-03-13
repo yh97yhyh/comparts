@@ -17,12 +17,12 @@ struct HomeView: View {
                 Text("컴파츠")
                     .font(.headline)
                 Spacer()
-//                NavigationLink(destination: CartView(viewModel: myPageViewModel)) {
-//                    Image(systemName: "cart.fill")
-//                        .imageScale(.large)
-//                        .foregroundColor(.black)
-//                }
-//                .buttonStyle(PlainButtonStyle())
+                NavigationLink(destination: CartView()) {
+                    Image(systemName: "cart.fill")
+                        .imageScale(.large)
+                        .foregroundColor(.black)
+                }
+                .buttonStyle(PlainButtonStyle())
             }
             .padding(.horizontal)
             

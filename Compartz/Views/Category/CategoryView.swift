@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CategoryView: View {
     @StateObject var viewModel = CategoryViewModel.shared
+    @EnvironmentObject var myPageViewModel: MyPageViewModel
 //    @State private var selectedCategory: Int = 0
     
     var body: some View {
@@ -17,11 +18,11 @@ struct CategoryView: View {
                 Text("컴파츠")
                     .font(.headline)
                 Spacer()
-//                NavigationLink(destination: CartView()) {
-//                    Image(systemName: "cart.fill")
-//                        .imageScale(.large)
-//                        .foregroundColor(.black)
-//                }
+                NavigationLink(destination: CartView()) {
+                    Image(systemName: "cart.fill")
+                        .imageScale(.large)
+                        .foregroundColor(.black)
+                }
             }
             .padding(.horizontal)
             

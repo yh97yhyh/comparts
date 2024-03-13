@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ProductOrderView: View {
     @StateObject var viewModel: ProductViewModel
+    @EnvironmentObject var myPageViewModel: MyPageViewModel
+    
     @State var orderCount = 1
     @Environment(\.dismiss) private var dismiss
     
@@ -48,6 +50,7 @@ struct ProductOrderView: View {
                 }
                 .buttonStyle(MyPageButtonStyle())
                 Button {
+                    myPageViewModel.saveCart(productId: viewModel.product.id, count: orderCount)
 //                    myPageViewModel.addCartItem(newCartItem: CartItem(id: UUID().hashValue, product: viewModel.product, count: orderCount, selected: true))
                     dismiss()
                 } label: {
