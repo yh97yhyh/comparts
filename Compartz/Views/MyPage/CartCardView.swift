@@ -22,7 +22,7 @@ struct CartCardView: View {
                 Button {
                     print("\(index)")
 //                    myPageViewModel.removeCartItem(at: index)
-                    myPageViewModel.removeCartItem(id: viewModel.cart.id)
+//                    myPageViewModel.removeCartItem(id: viewModel.cart.id)
                 } label: {
                     Image(systemName: "xmark")
                         .imageScale(.large)

@@ -22,6 +22,7 @@ class CategoryViewModel: ObservableObject {
     @Published var products: [Product]
     @Published var isCanAddProducts = true
     @Published var totalCount = 0
+    
     private var fetchCount = 0
     private var page = 1
     private var totalPages = 0

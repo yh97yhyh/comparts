@@ -12,7 +12,7 @@ struct OrderDetailResponse: Codable {
     let amount: Int
     let createdDatetime: String
     let userId: Int
-    let details: [OrderItemResponse]
+    let details: [OrderItem]
 }
 
 struct OrdersResponse: Codable {
