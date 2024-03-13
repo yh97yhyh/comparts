@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CartCardView: View {
-    @StateObject var myPageViewModel: MyPageViewModel
+    @EnvironmentObject var myPageViewModel: MyPageViewModel
     @StateObject var viewModel: CartViewModel
     @Binding var isSelected: Bool
     @Binding var count: Int
@@ -94,5 +94,5 @@ struct CircleCheckboxStyle: ToggleStyle {
 }
 
 #Preview {
-    CartCardView(myPageViewModel: MyPageViewModel(), viewModel: CartViewModel(), isSelected: .constant(true), count: .constant(1))
+    CartCardView(viewModel: CartViewModel(), isSelected: .constant(true), count: .constant(1))
 }

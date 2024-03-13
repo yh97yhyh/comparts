@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ProfileHeaderView: View {
-    @StateObject var viewModel: MyPageViewModel
-    
+    @EnvironmentObject var viewModel: MyPageViewModel
+
     var body: some View {
         VStack {
             HStack {
@@ -32,5 +32,5 @@ struct ProfileHeaderView: View {
 }
 
 #Preview {
-    ProfileHeaderView(viewModel: MyPageViewModel())
+    ProfileHeaderView()
 }

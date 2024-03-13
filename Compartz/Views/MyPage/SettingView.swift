@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SettingView: View {
-    @StateObject var viewModel: MyPageViewModel
-    @StateObject var authManager = AuthManager.shared
+    @EnvironmentObject var authManager: AuthManager
+    @EnvironmentObject var viewModel: MyPageViewModel
 
     var body: some View {
         VStack {
@@ -35,5 +35,5 @@ struct SettingView: View {
 }
 
 #Preview {
-    SettingView(viewModel: MyPageViewModel())
+    SettingView()
 }

@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct CompartzApp: App {
+    @StateObject var authManager = AuthManager.shared
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(authManager)
         }
     }
 }

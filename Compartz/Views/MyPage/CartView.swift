@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CartView: View {
-    @StateObject var viewModel : MyPageViewModel
+    @EnvironmentObject var viewModel: MyPageViewModel
     @Environment(\.dismiss) private var dismiss
     
     var allItemsSelected: Bool {
@@ -80,8 +80,7 @@ struct CartView: View {
 //                    Divider()
 //                }
                 ForEach($viewModel.cartItems) { $cartItem in
-                    CartCardView(myPageViewModel: viewModel,
-                                 viewModel: CartViewModel(cartItem),
+                    CartCardView(viewModel: CartViewModel(cartItem),
                                  isSelected: $cartItem.selected,
                                  count: $cartItem.count)
                     Divider()
@@ -120,5 +119,5 @@ struct CheckboxStyle: ToggleStyle {
 }
 
 #Preview {
-    CartView(viewModel: MyPageViewModel())
+    CartView()
 }

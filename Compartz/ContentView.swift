@@ -8,15 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var authManager = AuthManager.shared
+    @EnvironmentObject var authManager: AuthManager
     
     var body: some View {
         VStack {
             if authManager.isLoggedIn {
                 MainTabView()
+                    .environmentObject(getMyPageViewModel())
             } else {
                 LoginView()
             }
+        }
+    }
+    
+    func getMyPageViewModel() -> MyPageViewModel {
+        if let currentUser = authManager.currentUser {
+            return MyPageViewModel(currentUser)
+        } else {
+            return MyPageViewModel()
         }
     }
 }
