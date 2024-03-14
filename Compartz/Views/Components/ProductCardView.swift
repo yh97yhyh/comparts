@@ -28,7 +28,7 @@ struct ProductCardView: View {
                         .font(.body)
 //                        .fontWeight(.semibold)
                         .lineLimit(1)
-                    Spacer()
+//                    Spacer()
                 }
                 Text("\(viewModel.product.price)")
                     .font(.body)
