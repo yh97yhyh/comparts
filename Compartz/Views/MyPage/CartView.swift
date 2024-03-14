@@ -10,6 +10,7 @@ import SwiftUI
 struct CartView: View {
     @EnvironmentObject var viewModel: MyPageViewModel
     @Environment(\.dismiss) private var dismiss
+    @State private var showingPopup = false
     
     var allItemsSelected: Bool {
         return !viewModel.cartItems.contains { !$0.selected }
@@ -88,11 +89,17 @@ struct CartView: View {
             }
             
             Button {
+                self.showingPopup = true
                 order()
             } label: {
                 Text("총 \(totalPrice)원 결제하기")
             }
             .buttonStyle(ProductButtonStyle(height: 56, isMaxWidth: true))
+            .alert(isPresented: $showingPopup) {
+                Alert(title: Text("결제"),
+                      message: Text("성공적으로 결제되었습니다."),
+                      dismissButton: .default(Text("OK")))
+            }
         }
         .setTabBarVisibility(isHidden: true)
         .edgesIgnoringSafeArea(.bottom)

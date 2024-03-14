@@ -75,6 +75,8 @@ struct CartCardView: View {
                     }
                 }
                 
+//                Spacer()
+                
             }
             .padding(.horizontal)
         }

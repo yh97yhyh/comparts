@@ -39,6 +39,8 @@ struct OrderCardView: View {
                                 .font(.footnote)
 
                         }
+                        
+//                        Spacer()
                     }
                 }
                 
