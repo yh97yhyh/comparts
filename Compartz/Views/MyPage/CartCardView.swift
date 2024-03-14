@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct CartCardView: View {
     @EnvironmentObject var myPageViewModel: MyPageViewModel
@@ -37,17 +38,26 @@ struct CartCardView: View {
                 Toggle("", isOn: $isSelected)
                     .toggleStyle(CircleCheckboxStyle())
                 
-                ProductCardView(viewModel: ProductViewModel(viewModel.cart.product))
-                    .frame(width: 150, height: nil)
+//                ProductCardView(viewModel: ProductViewModel(viewModel.cart.product))
+//                    .frame(width: 120, height: nil)
+//                    .padding(.trailing, 32)
+                KFImage(URL(string: "http://localhost:8080/images/\(viewModel.cart.product.image)"))
+                    .resizable()
+                    .frame(width: 100, height: 100)
+                    .scaledToFill()
+                    .clipped()
+                    .padding(.trailing, 48)
+
                 
-                Spacer()
+//                Spacer()
                 
                 VStack(alignment: .leading) {
                     Text(viewModel.cart.product.name)
-                        .font(.caption)
+                        .foregroundColor(.gray)
                         .fontWeight(.semibold)
+//                        .font(.caption)
                     Text("\(viewModel.cart.product.price) 원")
-                        .font(.footnote)
+                        .font(.subheadline)
                         .padding(.bottom, 8)
                     
                     HStack {
@@ -75,7 +85,7 @@ struct CartCardView: View {
                     }
                 }
                 
-//                Spacer()
+                Spacer()
                 
             }
             .padding(.horizontal)

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct OrderCardView: View {
     @StateObject var viewModel: OrderViewModel
@@ -24,23 +25,31 @@ struct OrderCardView: View {
             VStack(alignment: .leading) {
                 ForEach(viewModel.order.orderItems, id:\.self) { orderItem in
                     HStack {
-                        ProductCardView(viewModel: ProductViewModel(orderItem.product))
-                            .frame(width: 150, height: nil)
+//                        ProductCardView(viewModel: ProductViewModel(orderItem.product))
+//                            .frame(width: 120, height: nil)
+//                            .padding(.trailing, 32)
                         
-                        Spacer()
+                        KFImage(URL(string: "http://localhost:8080/images/\(orderItem.product.image)"))
+                            .resizable()
+                            .frame(width: 100, height: 100)
+                            .scaledToFill()
+                            .clipped()
+                            .padding(.trailing, 48)
+
                         
                         VStack(alignment: .leading) {
                             Text(orderItem.product.name)
-                                .font(.caption)
+                                .foregroundColor(.gray)
                                 .fontWeight(.semibold)
+//                                .font(.caption)
                             Text("\(orderItem.product.price) 원")
-                                .font(.footnote)
+                                .font(.subheadline)
                             Text("\(orderItem.count) 개")
-                                .font(.footnote)
+                                .font(.subheadline)
 
                         }
                         
-//                        Spacer()
+                        Spacer()
                     }
                 }
                 
