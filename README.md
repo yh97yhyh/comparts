@@ -16,12 +16,12 @@
 <br>
 <br>
 
-<img src="https://github.com/yh97yhyh/weather-app/assets/47898473/f474c1dd-ac75-4e0d-818f-c4fdabf4244d" width="33%" height="33%"/>
-<img src="https://github.com/yh97yhyh/weather-app/assets/47898473/64be4132-f9ff-4c40-bf7b-23f1abd6443b" width="33%" height="33%"/>
-<img src="https://github.com/yh97yhyh/weather-app/assets/47898473/0bad25f7-898d-4e52-b4ae-8f02aeaa2559" width="33%" height="33%"/>
-<img src="https://github.com/yh97yhyh/weather-app/assets/47898473/bbfcf02a-23af-4755-bc84-4bad7ee98312" width="33%" height="33%"/>
-<img src="https://github.com/yh97yhyh/weather-app/assets/47898473/928073bc-5aa5-4d10-85f1-038fae2396f3" width="33%" height="33%"/>
-<img src="https://github.com/yh97yhyh/weather-app/assets/47898473/6d7ae69a-ec6f-420d-8ecf-cd0711a9c3ff" width="33%" height="33%"/>
+<img src="https://github.com/yh97yhyh/weather-app/assets/47898473/f474c1dd-ac75-4e0d-818f-c4fdabf4244d" width="30%" height="30%"/>
+<img src="https://github.com/yh97yhyh/weather-app/assets/47898473/64be4132-f9ff-4c40-bf7b-23f1abd6443b" width="30%" height="30%"/>
+<img src="https://github.com/yh97yhyh/weather-app/assets/47898473/0bad25f7-898d-4e52-b4ae-8f02aeaa2559" width="30%" height="30%"/>
+<img src="https://github.com/yh97yhyh/weather-app/assets/47898473/bbfcf02a-23af-4755-bc84-4bad7ee98312" width="30%" height="30%"/>
+<img src="https://github.com/yh97yhyh/weather-app/assets/47898473/928073bc-5aa5-4d10-85f1-038fae2396f3" width="30%" height="30%"/>
+<img src="https://github.com/yh97yhyh/weather-app/assets/47898473/6d7ae69a-ec6f-420d-8ecf-cd0711a9c3ff" width="30%" height="30%"/>
 
 
 ---
